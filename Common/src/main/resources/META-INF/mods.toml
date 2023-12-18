@@ -1,14 +1,14 @@
 modLoader="javafml"
 loaderVersion="*"
 license="All rights reserved"
-issueTrackerURL="https://github.com/ricksouth/serilum-mc-mods/labels/Mod:%20Just%20Mob%20Heads"
+issueTrackerURL="https://github.com/Serilum/.issue-tracker/labels/Mod:%20Just%20Mob%20Heads"
 logoFile="icon.png"
 
 [[mods]]
 modId="justmobheads"
-version="7.4"
+version="7.5"
 displayName="Just Mob Heads"
-displayURL="https://curseforge.com/minecraft/mc-mods/just-mob-heads"
+displayURL="https://serilum.com/mod/just-mob-heads"
 authors="Rick South"
 description='''Mobs have a configurable chance to drop their heads on death. Uses lag-free vanilla resources. Collect them all!
 '''
@@ -21,13 +21,15 @@ If you would like to contribute too, check out https://ricksouth.com/donate. App
 
 [[dependencies.justmobheads]]
     modId="collective"
+    type="required"
     mandatory=true
-    versionRange="[7.13,)"
+    versionRange="[7.21,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.justmobheads]]
     modId="minecraft"
+    type="required"
     mandatory=true
     versionRange="[1.20.4]"
     ordering="NONE"
