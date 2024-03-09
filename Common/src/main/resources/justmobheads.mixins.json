@@ -1,9 +1,8 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.natamus.justmobheads.forge.mixin",
+  "package": "com.natamus.justmobheads.mixin",
   "compatibilityLevel": "JAVA_17",
-  "refmap": "justmobheads_forge.refmap.json",
   "mixins": [
 
   ],
