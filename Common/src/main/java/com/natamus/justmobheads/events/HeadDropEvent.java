@@ -4,7 +4,10 @@ import com.mojang.authlib.GameProfile;
 import com.natamus.justmobheads.config.ConfigHandler;
 import com.natamus.justmobheads.util.HeadData;
 import com.natamus.justmobheads.util.MobHeads;
+import joptsimple.internal.Strings;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -12,7 +15,9 @@ import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.PlayerHeadItem;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -125,6 +130,39 @@ public class HeadDropEvent {
 		world.addFreshEntity(mobhead);
 	}
 	
+    public static void onItemPickup(Level level, Player player, ItemStack itemStack) {
+        if (level.isClientSide) {
+            return;
+        }
+
+		Item item = itemStack.getItem();
+        if (!(item instanceof PlayerHeadItem)) {
+            return;
+        }
+
+		String headName = "";
+		CompoundTag compoundTagItemStack = itemStack.getTag();
+		if (compoundTagItemStack.contains("SkullOwner", 8)) {
+			headName = compoundTagItemStack.getString("SkullOwner");
+		} else if (compoundTagItemStack.contains("SkullOwner", 10)) {
+			CompoundTag compoundTagSkullOwner = compoundTagItemStack.getCompound("SkullOwner");
+			if (compoundTagSkullOwner.contains("Name", 8)) {
+				headName = compoundTagSkullOwner.getString("Name");
+			}
+		}
+
+		if (headName.isEmpty()) {
+			return;
+		}
+
+		if (!HeadData.headdata.containsKey(headName.toLowerCase().replace(" ", "_"))) {
+			return;
+		}
+
+		itemStack.setHoverName(Component.literal(headName + " Head"));
+    }
+
+	// Legacy code for previously generated mob heads. Might be removed in the future.
 	public static boolean onPlayerHeadBreak(Level world, Player player, BlockPos pos, BlockState state, BlockEntity blockEntity) {
 		Block block = state.getBlock();
 		if (block instanceof SkullBlock || block instanceof WallSkullBlock) {
@@ -136,24 +174,43 @@ public class HeadDropEvent {
 			if (!(targetBlockEntity instanceof SkullBlockEntity)) {
 				return true;
 			}
-			
+
 			SkullBlockEntity sbe = (SkullBlockEntity)targetBlockEntity;
 			if (sbe == null) {
 				return true;
 			}
-			
+
+			String headName = "";
+			CompoundTag compoundTagItemStack = targetBlockEntity.getUpdateTag();
+			if (compoundTagItemStack.contains("SkullOwner", 8)) {
+				headName = compoundTagItemStack.getString("SkullOwner");
+			} else if (compoundTagItemStack.contains("SkullOwner", 10)) {
+				CompoundTag compoundTagSkullOwner = compoundTagItemStack.getCompound("SkullOwner");
+				if (compoundTagSkullOwner.contains("Name", 8)) {
+					headName = compoundTagSkullOwner.getString("Name");
+				}
+			}
+
+			if (!headName.isEmpty()) {
+				return true;
+			}
+
 			GameProfile profile = sbe.getOwnerProfile();
 			if (profile == null) {
 				return true;
 			}
-			
+
+			if (!Strings.isNullOrEmpty(profile.getName())) {
+				return true;
+			}
+
 			UUID uuid = profile.getId();
 			if (uuid == null) {
 				return true;
 			}
-			
+
 			String headid = uuid.toString();
-			
+
 			String correctheadname = "";
 			for (String headname : HeadData.headdata.keySet()) {
 				String headnameid = HeadData.headdata.get(headname).getFirst();
@@ -162,16 +219,16 @@ public class HeadDropEvent {
 					break;
 				}
 			}
-			
+
 			ItemStack named_headstack = MobHeads.getMobHead(correctheadname, 1);
 			if (named_headstack != null ) {
 				world.destroyBlock(pos, false);
-				
+
 				world.addFreshEntity(new ItemEntity(world, pos.getX(), pos.getY()+0.5, pos.getZ(), named_headstack));
 				return false;
 			}
 		}
-		
+
 		return true;
 	}
 }

@@ -37,12 +37,16 @@ public class MobHeads {
 		if (mobdata == null) {
 			return null;
 		}
-		
-		String headname = capitalizeFirst(mobname.replace("_", " ")) + " Head";
+
+		String formattedMobName = capitalizeFirst(mobname.replace("_", " "));
+
 		String oldid = mobdata.getFirst();
 		String texture = mobdata.getSecond();
 
-		return HeadFunctions.getTexturedHead(headname, texture, oldid, amount);
+		ItemStack texturedHeadStack = HeadFunctions.getNewTexturedHead(formattedMobName, texture, oldid, amount);
+		texturedHeadStack.setHoverName(Component.literal(formattedMobName + " Head"));
+
+		return texturedHeadStack;
 	}
 	
 	public static ItemStack getStandardHead(String headname) {
