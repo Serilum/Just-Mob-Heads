@@ -143,6 +143,10 @@ public class HeadDropEvent {
 
 		String headName = "";
 		CompoundTag compoundTagItemStack = itemStack.getTag();
+		if (compoundTagItemStack == null) {
+			return;
+		}
+
 		if (compoundTagItemStack.contains("SkullOwner", 8)) {
 			headName = compoundTagItemStack.getString("SkullOwner");
 		} else if (compoundTagItemStack.contains("SkullOwner", 10)) {
