@@ -8,7 +8,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
-import net.neoforged.neoforge.event.entity.player.EntityItemPickupEvent;
+import net.neoforged.neoforge.event.entity.player.ItemEntityPickupEvent;
 
 @EventBusSubscriber
 public class NeoForgeHeadDropEvent {
@@ -24,8 +24,8 @@ public class NeoForgeHeadDropEvent {
 	}
 	
 	@SubscribeEvent
-	public static void onItemPickup(EntityItemPickupEvent e) {
-		Player player = e.getEntity();
-		HeadDropEvent.onItemPickup(player.level(), player, e.getItem().getItem());
+	public static void onItemPickup(ItemEntityPickupEvent.Post e) {
+		Player player = e.getPlayer();
+		HeadDropEvent.onItemPickup(player.level(), player, e.getItemEntity().getItem());
 	}
 }
