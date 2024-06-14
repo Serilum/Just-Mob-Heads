@@ -1,0 +1,44 @@
+modLoader="javafml"
+loaderVersion="*"
+license="All rights reserved"
+issueTrackerURL="https://github.com/Serilum/.issue-tracker/labels/Mod:%20Just%20Mob%20Heads"
+logoFile="icon.png"
+
+[[mods]]
+modId="justmobheads"
+version="7.9"
+displayName="Just Mob Heads"
+displayURL="https://serilum.com/mod/just-mob-heads"
+authors="Rick South"
+description='''Mobs have a configurable chance to drop their heads on death. Uses lag-free vanilla resources. Collect them all!
+'''
+credits='''Thank you very much to my Membership sponsors for supporting the development of this mod:  
+
+Alister, Andrean Olgo, aternosorg, BirdieMiner, Cherriesaurus, Jeremy Langford, Michael W. S., Rare Students, Shana Gitnick, Tyler Behl   
+
+If you would like to contribute too, check out https://serilum.com/donate. Appreciate it! <3   
+'''
+
+[[dependencies.justmobheads]]
+    modId="collective"
+    type="required"
+    versionRange="[7.61,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.justmobheads]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21]"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.justmobheads]]
+    modId="neoforge"
+    type="required"
+    versionRange="[20.6.78,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[mixins]]
+    config = "justmobheads.mixins.json"
