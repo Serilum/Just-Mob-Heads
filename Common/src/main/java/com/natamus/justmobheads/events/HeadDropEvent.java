@@ -8,6 +8,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -86,8 +87,8 @@ public class HeadDropEvent {
 		if (ConfigHandler.mobSpecificDropChances) {
 			double chance = -1;
 			if (headname.equals("")) {
-				if (HeadData.headchances.containsKey(mobname)) {
-					chance = HeadData.headchances.get(mobname);
+				if (HeadData.headChances.containsKey(mobname)) {
+					chance = HeadData.headChances.get(mobname);
 				}
 			}
 			else {
@@ -135,6 +136,14 @@ public class HeadDropEvent {
         }
 
 		if (itemStack.has(DataComponents.CUSTOM_NAME)) {
+			if (!itemStack.has(DataComponents.NOTE_BLOCK_SOUND)) {
+				String headName = itemStack.get(DataComponents.CUSTOM_NAME).getString();
+				String dataHeadName = headName.replace(" Head", "").toLowerCase().replace(" ", "_");
+				if (HeadData.headNoteBlockSounds.containsKey(dataHeadName)) {
+					itemStack.set(DataComponents.NOTE_BLOCK_SOUND, ResourceLocation.parse(HeadData.headNoteBlockSounds.get(dataHeadName)));
+				}
+			}
+
 			return;
 		}
 
@@ -157,7 +166,7 @@ public class HeadDropEvent {
 			return;
 		}
 
-		if (!HeadData.headdata.containsKey(headName.toLowerCase().replace(" ", "_"))) {
+		if (!HeadData.headTextureData.containsKey(headName.toLowerCase().replace(" ", "_"))) {
 			return;
 		}
 
