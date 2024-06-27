@@ -3,9 +3,11 @@ package com.natamus.justmobheads.cmds;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
+import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.natamus.collective.functions.MessageFunctions;
 import com.natamus.collective.functions.StringFunctions;
+import com.natamus.justmobheads.functions.JmhCommandFunctions;
 import com.natamus.justmobheads.util.HeadData;
 import com.natamus.justmobheads.util.MobHeads;
 import com.natamus.justmobheads.util.Util;
@@ -54,35 +56,49 @@ public class CommandJmh {
 				return 1;
 			})))
 			.then(Commands.literal("head")
-			.then(Commands.argument("mob-name", StringArgumentType.word())
+			.then(Commands.argument("mob-name", StringArgumentType.string()).suggests(JmhCommandFunctions.mobHeadSuggestions)
+			.executes((command) -> {
+				return headCommand(command, 1);
+			})))
+			.then(Commands.literal("head")
+			.then(Commands.argument("mob-name", StringArgumentType.string()).suggests(JmhCommandFunctions.mobHeadSuggestions)
 			.then(Commands.argument("amount", IntegerArgumentType.integer(1, 64))
 			.executes((command) -> {
-				CommandSourceStack source = command.getSource();
-				String mobname = StringArgumentType.getString(command, "mob-name").toLowerCase();
-				Integer amount = IntegerArgumentType.getInteger(command, "amount");
-				
-				if (!HeadData.headdata.containsKey(mobname)) {
-					MessageFunctions.sendMessage(source, "The mobname '" + mobname + "' does not exist. You can get a list of all possible heads with:", ChatFormatting.RED);
-					MessageFunctions.sendMessage(source, " Usage: /jmh head list", ChatFormatting.RED);
-					return 1;
-				}
-				
-				Player player;
-				try {
-					player = source.getPlayerOrException();
-				}
-				catch (CommandSyntaxException ex) {
-					MessageFunctions.sendMessage(source, "This command can only be executed as a player in-game.", ChatFormatting.RED);
-					return 1;
-				}
-				
-				ItemStack headstack = MobHeads.getMobHead(mobname, amount);
-				if (!player.getInventory().add(headstack)) {
-					player.drop(headstack, false);
-				}
-				MessageFunctions.sendMessage(source, "Successfully generated " + amount + " " + StringFunctions.capitalizeFirst(mobname.replace("_", " ")) + " heads.", ChatFormatting.DARK_GREEN);
-				return 1;
+				return headCommand(command, IntegerArgumentType.getInteger(command, "amount"));
 			}))))
 		);
+	}
+
+	private static int headCommand(CommandContext<CommandSourceStack> command, int amount) {
+		CommandSourceStack source = command.getSource();
+		String mobname = StringArgumentType.getString(command, "mob-name").toLowerCase();
+
+		if (!HeadData.headdata.containsKey(mobname)) {
+			MessageFunctions.sendMessage(source, "The mobname '" + mobname + "' does not exist. You can get a list of all possible heads with:", ChatFormatting.RED);
+			MessageFunctions.sendMessage(source, " Usage: /jmh head list", ChatFormatting.RED);
+			return 1;
+		}
+
+		Player player;
+		try {
+			player = source.getPlayerOrException();
+		}
+		catch (CommandSyntaxException ex) {
+			MessageFunctions.sendMessage(source, "This command can only be executed as a player in-game.", ChatFormatting.RED);
+			return 1;
+		}
+
+		ItemStack headstack = MobHeads.getMobHead(mobname, amount);
+		if (!player.getInventory().add(headstack)) {
+			player.drop(headstack, false);
+		}
+
+		String s = "";
+		if (amount > 1) {
+			s = "s";
+		}
+
+		MessageFunctions.sendMessage(source, "Successfully generated " + amount + " " + StringFunctions.capitalizeFirst(mobname.replace("_", " ")) + " head" + s + ".", ChatFormatting.DARK_GREEN);
+		return 1;
 	}
 }

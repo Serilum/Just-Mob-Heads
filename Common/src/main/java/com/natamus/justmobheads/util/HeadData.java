@@ -15,7 +15,7 @@ public class HeadData {
 
 		// Head textures
 		defaultchances.put("bat", 0.25); headdata.put("bat", new Pair<String, String>("e2d4c388-42d5-4a96-b4c9-623df7f5e026", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGNmMWIzYjNmNTM5ZDJmNjNjMTcyZTk0Y2FjZmFhMzkxZThiMzg1Y2RkNjMzZjNiOTkxYzc0ZTQ0YjI4In19fQ=="));
-		defaultchances.put("blaze", 0.01); headdata.put("blaze", new Pair<String, String>("7ceb88b2-7f5f-4399-abb9-7068251baa9d", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjc4ZWYyZTRjZjJjNDFhMmQxNGJmZGU5Y2FmZjEwMjE5ZjViMWJmNWIzNWE0OWViNTFjNjQ2Nzg4MmNiNWYwIn19fQ=="));
+		defaultchances.put("blaze", 0.01); headdata.put("blaze", new Pair<String, String>("7ceb88b2-7f5f-4399-abb9-7068251baa9d", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTJmZDg1NzY2OTU1M2JhZjIxZWE4ZWZlNmY5MDNlNzEyYThiOTI3YWZjM2UxNjVjNWNiMGY3NmU0ZjQ5NWY2MiJ9fX0="));
 
 		defaultchances.put("cave_spider", 0.01); headdata.put("cave_spider", new Pair<String, String>("39173a7a-c957-4ec1-ac1a-43e5a64983df", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDE2NDVkZmQ3N2QwOTkyMzEwN2IzNDk2ZTk0ZWViNWMzMDMyOWY5N2VmYzk2ZWQ3NmUyMjZlOTgyMjQifX19"));
 		defaultchances.put("charged_creeper", 1.0); headdata.put("charged_creeper", new Pair<String, String>("f9318e11-a0c7-4cfd-85c9-2b2852e1a8b0", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjJjZWIzOWRkNGRlMjRhN2FkZmUyOTFhM2EwY2ZjN2NmNGY2NDVkZTU5YjYwM2ZjZmUwNmM2YjVhMDZlMjYifX19"));
@@ -185,80 +185,59 @@ public class HeadData {
 		defaultchances.put("zombie_toolsmith", 0.1); headdata.put("zombie_toolsmith", new Pair<String, String>("0bdaa1c9-c062-482b-9508-0978c4fbcac2", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDg3NTY0MDFmNTdhZDQxNGEzM2JiYzkyZjA1OWUzOTY5NjEzNjA4ZjhkOGZmZmRkOGUyZjU0Y2MwMWIxOGY5NCJ9fX0="));
 		defaultchances.put("zombie_weaponsmith", 0.1); headdata.put("zombie_weaponsmith", new Pair<String, String>("888413da-fc55-4fdf-a47c-7485ed89cd8c", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjg2ZmE4ZDlmZmI3YjcwYjBlODk0NGE1NWRiMzMwNWFlYzM0NmFiMWRlNTRjZDk3YWVjYTVjNzIwZDk1ZjdlYSJ9fX0="));
 
-		// I should improve this.
-		boolean onefifteen = Reference.ACCEPTED_VERSIONS.contains("1.15");
-		boolean onesixteen = Reference.ACCEPTED_VERSIONS.contains("1.16");
-		boolean oneseventeen = Reference.ACCEPTED_VERSIONS.contains("1.17");
-		boolean oneeighteen = Reference.ACCEPTED_VERSIONS.contains("1.18");
-		boolean onenineteen = Reference.ACCEPTED_VERSIONS.contains("1.19");
-		boolean onetwenty = Reference.ACCEPTED_VERSIONS.contains("1.20") && !Reference.ACCEPTED_VERSIONS.contains("1.20.5");
-		boolean onetwentydotfive = Reference.ACCEPTED_VERSIONS.contains("1.20.5");
-		boolean onetwentyone = Reference.ACCEPTED_VERSIONS.contains("1.21");
+		// 1.15
+		defaultchances.put("bee", 0.1); headdata.put("bee", new Pair<String, String>("77342662-8870-445a-869f-f0aef1406b3d", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTlhYzE2ZjI5NmI0NjFkMDVlYTA3ODVkNDc3MDMzZTUyNzM1OGI0ZjMwYzI2NmFhMDJmMDIwMTU3ZmZjYTczNiJ9fX0="));
 
-		if (onefifteen || onesixteen || oneseventeen || oneeighteen || onenineteen || onetwenty || onetwentydotfive || onetwentyone) {
-			defaultchances.put("bee", 0.1); headdata.put("bee", new Pair<String, String>("77342662-8870-445a-869f-f0aef1406b3d", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTlhYzE2ZjI5NmI0NjFkMDVlYTA3ODVkNDc3MDMzZTUyNzM1OGI0ZjMwYzI2NmFhMDJmMDIwMTU3ZmZjYTczNiJ9fX0="));
-		}
-		if (onesixteen || oneseventeen || oneeighteen || onenineteen || onetwenty || onetwentydotfive || onetwentyone) {
-			defaultchances.put("hoglin", 0.1); headdata.put("hoglin", new Pair<String, String>("8196c240-e96a-4434-b630-6b191ceeb480", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWJiOWJjMGYwMWRiZDc2MmEwOGQ5ZTc3YzA4MDY5ZWQ3Yzk1MzY0YWEzMGNhMTA3MjIwODU2MWI3MzBlOGQ3NSJ9fX0="));
-			defaultchances.put("piglin", 0.05); headdata.put("piglin", new Pair<String, String>("dcc2d7eb-daca-4b6f-805a-a454e0d1d902", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTBiYzlkYmI0NDA0YjgwMGY4Y2YwMjU2MjIwZmY3NGIwYjcxZGJhOGI2NjYwMGI2NzM0ZjRkNjMzNjE2MThmNSJ9fX0="));
-			defaultchances.put("piglin_brute", 0.1); headdata.put("piglin_brute", new Pair<String, String>("a6db33b5-1e60-4cbe-a38f-881579f94336", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2UzMDBlOTAyNzM0OWM0OTA3NDk3NDM4YmFjMjllM2E0Yzg3YTg0OGM1MGIzNGMyMTI0MjcyN2I1N2Y0ZTFjZiJ9fX0="));
-			defaultchances.put("zombified_piglin", 0.1); headdata.put("zombified_piglin", new Pair<String, String>("4f013cfb-84f8-4d80-8529-25127f6c70ee", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2VhYmFlY2M1ZmFlNWE4YTQ5Yzg4NjNmZjQ4MzFhYWEyODQxOThmMWEyMzk4ODkwYzc2NWUwYThkZTE4ZGE4YyJ9fX0="));
-			defaultchances.put("strider", 0.1); headdata.put("strider", new Pair<String, String>("d1c2fba9-6633-4625-9cda-8528fae6fe09", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMThhOWFkZjc4MGVjN2RkNDYyNWM5YzA3NzkwNTJlNmExNWE0NTE4NjY2MjM1MTFlNGM4MmU5NjU1NzE0YjNjMSJ9fX0="));
-			defaultchances.put("zoglin", 0.1); headdata.put("zoglin", new Pair<String, String>("d6f4e7ce-dc71-4c81-97dc-df0d15d39a68", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzE5YjdiNWU5ZmZkNGUyMmI4OTBhYjc3OGI0Nzk1YjY2MmZhZmYyYjQ5NzhiZjgxNTU3NGU0OGIwZTUyYjMwMSJ9fX0="));
-		}
-		else {
-			defaultchances.put("zombie_pigman", 0.05); headdata.put("zombie_pigman", new Pair<String, String>("6540c046-d6ea-4aff-9766-32a54ebe6958", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzRlOWM2ZTk4NTgyZmZkOGZmOGZlYjMzMjJjZDE4NDljNDNmYjE2YjE1OGFiYjExY2E3YjQyZWRhNzc0M2ViIn19fQ=="));
-		}
-		if (oneseventeen || oneeighteen || onenineteen || onetwenty || onetwentydotfive || onetwentyone) {
-			defaultchances.put("lucy_axolotl", 0.5); headdata.put("lucy_axolotl", new Pair<String, String>("c6c9c2a1-f74a-4797-9d5d-e4b01f71e641", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjRhZDExYWNkMjkzYTNmMzk0NGQ4ZGUwM2YwNWU3MzFiOGYwMmQ5OWNlMGMyYTY4NWJlNzA1YzU2MjY0NzYxYSJ9fX0="));
-			defaultchances.put("wild_axolotl", 0.5); headdata.put("wild_axolotl", new Pair<String, String>("ac89cebb-a384-45b6-a1b3-a55e4749e1ff", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWExMGJjNGYzNjhlMTJjY2JkZWE0NjA2ZDJkM2ZiMjE5ZTkyNjM0MTA1ZDE5NzRkZTcxMGQxZmRiOWIwMjlhYyJ9fX0="));
-			defaultchances.put("gold_axolotl", 0.5); headdata.put("gold_axolotl", new Pair<String, String>("c661202e-5e98-4f87-a0f7-63987d9f12a8", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjIwZTgxNzU3MThlYWMzOTY3MmU5ZGM2YzRlZWNjMGEzMmI0YzYyOTcwZDQ2YWJmNTIxN2FjNjUyYzU2ZjMxNyJ9fX0="));
-			defaultchances.put("cyan_axolotl", 0.5); headdata.put("cyan_axolotl", new Pair<String, String>("21b65fda-f0a8-4996-94b5-f90e96ec6115", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWE4NTAyZjgwODBmYWUwNTE3ZWUxZDU4NDc5ZDE1OWEwMzdhYjljNDZhZjlkNzExZTJhNWU4NjBlZTdiNjM3NSJ9fX0="));
-			defaultchances.put("blue_axolotl", 0.5); headdata.put("blue_axolotl", new Pair<String, String>("fe7d686c-4f4b-49b3-b97b-7cbe52410f5a", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmQwMDU2NjIyMzU5NzRjZmRhZjAzZmY1MTg0ZDM0NWM0MDlmN2YyNWEwYTBkMGZjN2FiODdjNTk3MWIwZjQ0OCJ9fX0="));
+		// 1.16
+		defaultchances.put("hoglin", 0.1); headdata.put("hoglin", new Pair<String, String>("8196c240-e96a-4434-b630-6b191ceeb480", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWJiOWJjMGYwMWRiZDc2MmEwOGQ5ZTc3YzA4MDY5ZWQ3Yzk1MzY0YWEzMGNhMTA3MjIwODU2MWI3MzBlOGQ3NSJ9fX0="));
+		defaultchances.put("piglin", 0.05); headdata.put("piglin", new Pair<String, String>("dcc2d7eb-daca-4b6f-805a-a454e0d1d902", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTBiYzlkYmI0NDA0YjgwMGY4Y2YwMjU2MjIwZmY3NGIwYjcxZGJhOGI2NjYwMGI2NzM0ZjRkNjMzNjE2MThmNSJ9fX0="));
+		defaultchances.put("piglin_brute", 0.1); headdata.put("piglin_brute", new Pair<String, String>("a6db33b5-1e60-4cbe-a38f-881579f94336", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2UzMDBlOTAyNzM0OWM0OTA3NDk3NDM4YmFjMjllM2E0Yzg3YTg0OGM1MGIzNGMyMTI0MjcyN2I1N2Y0ZTFjZiJ9fX0="));
+		defaultchances.put("zombified_piglin", 0.1); headdata.put("zombified_piglin", new Pair<String, String>("4f013cfb-84f8-4d80-8529-25127f6c70ee", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2VhYmFlY2M1ZmFlNWE4YTQ5Yzg4NjNmZjQ4MzFhYWEyODQxOThmMWEyMzk4ODkwYzc2NWUwYThkZTE4ZGE4YyJ9fX0="));
+		defaultchances.put("strider", 0.1); headdata.put("strider", new Pair<String, String>("d1c2fba9-6633-4625-9cda-8528fae6fe09", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMThhOWFkZjc4MGVjN2RkNDYyNWM5YzA3NzkwNTJlNmExNWE0NTE4NjY2MjM1MTFlNGM4MmU5NjU1NzE0YjNjMSJ9fX0="));
+		defaultchances.put("zoglin", 0.1); headdata.put("zoglin", new Pair<String, String>("d6f4e7ce-dc71-4c81-97dc-df0d15d39a68", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzE5YjdiNWU5ZmZkNGUyMmI4OTBhYjc3OGI0Nzk1YjY2MmZhZmYyYjQ5NzhiZjgxNTU3NGU0OGIwZTUyYjMwMSJ9fX0="));
 
-			defaultchances.put("goat", 0.05); headdata.put("goat", new Pair<String, String>("1dd79779-8fdf-4b92-a83f-487ad06fa6a5", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjAzMzMwMzk4YTBkODMzZjUzYWU4YzlhMWNiMzkzYzc0ZTlkMzFlMTg4ODU4NzBlODZhMjEzM2Q0NGYwYzYzYyJ9fX0="));
-			defaultchances.put("glow_squid", 0.2); headdata.put("glow_squid", new Pair<String, String>("de0e5ce0-b979-4bd2-a963-e665e424b525", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTczMjdlZTExODEyYjc2NGM3YWRlNzBiMjgyY2NlNGM1OGU2MzViMjAxNTI0NDA4MWQxNDkwNTQzZGE3MjgwZSJ9fX0="));
-		}
+		// 1.17
+		defaultchances.put("lucy_axolotl", 0.5); headdata.put("lucy_axolotl", new Pair<String, String>("c6c9c2a1-f74a-4797-9d5d-e4b01f71e641", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjRhZDExYWNkMjkzYTNmMzk0NGQ4ZGUwM2YwNWU3MzFiOGYwMmQ5OWNlMGMyYTY4NWJlNzA1YzU2MjY0NzYxYSJ9fX0="));
+		defaultchances.put("wild_axolotl", 0.5); headdata.put("wild_axolotl", new Pair<String, String>("ac89cebb-a384-45b6-a1b3-a55e4749e1ff", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWExMGJjNGYzNjhlMTJjY2JkZWE0NjA2ZDJkM2ZiMjE5ZTkyNjM0MTA1ZDE5NzRkZTcxMGQxZmRiOWIwMjlhYyJ9fX0="));
+		defaultchances.put("gold_axolotl", 0.5); headdata.put("gold_axolotl", new Pair<String, String>("c661202e-5e98-4f87-a0f7-63987d9f12a8", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjIwZTgxNzU3MThlYWMzOTY3MmU5ZGM2YzRlZWNjMGEzMmI0YzYyOTcwZDQ2YWJmNTIxN2FjNjUyYzU2ZjMxNyJ9fX0="));
+		defaultchances.put("cyan_axolotl", 0.5); headdata.put("cyan_axolotl", new Pair<String, String>("21b65fda-f0a8-4996-94b5-f90e96ec6115", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWE4NTAyZjgwODBmYWUwNTE3ZWUxZDU4NDc5ZDE1OWEwMzdhYjljNDZhZjlkNzExZTJhNWU4NjBlZTdiNjM3NSJ9fX0="));
+		defaultchances.put("blue_axolotl", 0.5); headdata.put("blue_axolotl", new Pair<String, String>("fe7d686c-4f4b-49b3-b97b-7cbe52410f5a", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmQwMDU2NjIyMzU5NzRjZmRhZjAzZmY1MTg0ZDM0NWM0MDlmN2YyNWEwYTBkMGZjN2FiODdjNTk3MWIwZjQ0OCJ9fX0="));
 
-		if (onenineteen || onetwenty || onetwentydotfive || onetwentyone) {
-			defaultchances.put("allay", 0.5); headdata.put("allay", new Pair<String, String>("3338ac33-a526-4b43-b838-061446933966", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTUwMjk0YTE3NDczMTBmMTA0MTI0YzYzNzNjYzYzOWI3MTJiYWE1N2I3ZDkyNjI5N2I2NDUxODhiN2JiOWFiOSJ9fX0="));
+		defaultchances.put("goat", 0.05); headdata.put("goat", new Pair<String, String>("1dd79779-8fdf-4b92-a83f-487ad06fa6a5", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjAzMzMwMzk4YTBkODMzZjUzYWU4YzlhMWNiMzkzYzc0ZTlkMzFlMTg4ODU4NzBlODZhMjEzM2Q0NGYwYzYzYyJ9fX0="));
+		defaultchances.put("glow_squid", 0.2); headdata.put("glow_squid", new Pair<String, String>("de0e5ce0-b979-4bd2-a963-e665e424b525", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTczMjdlZTExODEyYjc2NGM3YWRlNzBiMjgyY2NlNGM1OGU2MzViMjAxNTI0NDA4MWQxNDkwNTQzZGE3MjgwZSJ9fX0="));
 
-			defaultchances.put("cold_frog", 0.1); headdata.put("cold_frog", new Pair<String, String>("8cc32108-4d41-456e-a3f9-738ccbf6b6f5", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2U2MmU4YTA0OGQwNDBlYjA1MzNiYTI2YTg2NmNkOWMyZDA5MjhjOTMxYzUwYjQ0ODJhYzNhMzI2MWZhYjZmMCJ9fX0="));
-			defaultchances.put("temperate_frog", 0.1); headdata.put("temperate_frog", new Pair<String, String>("703b6de2-4e83-4df5-945f-7cddd1567fcd", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjNjZTZmOTk5OGVkMmRhNzU3ZDFlNjM3MmYwNGVmYTIwZTU3ZGZjMTdjM2EwNjQ3ODY1N2JiZGY1MWMyZjJhMiJ9fX0="));
-			defaultchances.put("warm_frog", 0.1); headdata.put("warm_frog", new Pair<String, String>("c4e733df-bbcf-436a-a2da-2638ccdcb83c", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjc3MzE0ZmEwMzhlYzMxMzU3ODQ1YTkzMjc0YjRkYzg4NDEyNDY4NjcyOGZmZTBkZWQ5YzM1NDY2YWNhMGFhYiJ9fX0="));
-			defaultchances.put("tadpole", 0.05); headdata.put("tadpole", new Pair<String, String>("7dba358f-adab-4059-b74c-3d8d9e5dee9b", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTg3MDM1ZjUzNTIzMzRjMmNiYTZhYzRjNjVjMmI5MDU5NzM5ZDZkMGU4MzljMWRkOThkNzVkMmU3Nzk1Nzg0NyJ9fX0="));
+		// 1.19
+		defaultchances.put("allay", 0.5); headdata.put("allay", new Pair<String, String>("3338ac33-a526-4b43-b838-061446933966", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTUwMjk0YTE3NDczMTBmMTA0MTI0YzYzNzNjYzYzOWI3MTJiYWE1N2I3ZDkyNjI5N2I2NDUxODhiN2JiOWFiOSJ9fX0="));
 
-			defaultchances.put("warden", 1.0); headdata.put("warden", new Pair<String, String>("5b4e4a47-fb56-41b9-9bcd-62f46ed51e3f", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmNmMzY3NGIyZGRjMGVmN2MzOWUzYjljNmI1ODY3N2RlNWNmMzc3ZDJlYjA3M2YyZjNmZTUwOTE5YjFjYTRjOSJ9fX0="));
+		defaultchances.put("cold_frog", 0.1); headdata.put("cold_frog", new Pair<String, String>("8cc32108-4d41-456e-a3f9-738ccbf6b6f5", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2U2MmU4YTA0OGQwNDBlYjA1MzNiYTI2YTg2NmNkOWMyZDA5MjhjOTMxYzUwYjQ0ODJhYzNhMzI2MWZhYjZmMCJ9fX0="));
+		defaultchances.put("temperate_frog", 0.1); headdata.put("temperate_frog", new Pair<String, String>("703b6de2-4e83-4df5-945f-7cddd1567fcd", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjNjZTZmOTk5OGVkMmRhNzU3ZDFlNjM3MmYwNGVmYTIwZTU3ZGZjMTdjM2EwNjQ3ODY1N2JiZGY1MWMyZjJhMiJ9fX0="));
+		defaultchances.put("warm_frog", 0.1); headdata.put("warm_frog", new Pair<String, String>("c4e733df-bbcf-436a-a2da-2638ccdcb83c", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjc3MzE0ZmEwMzhlYzMxMzU3ODQ1YTkzMjc0YjRkYzg4NDEyNDY4NjcyOGZmZTBkZWQ5YzM1NDY2YWNhMGFhYiJ9fX0="));
+		defaultchances.put("tadpole", 0.05); headdata.put("tadpole", new Pair<String, String>("7dba358f-adab-4059-b74c-3d8d9e5dee9b", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTg3MDM1ZjUzNTIzMzRjMmNiYTZhYzRjNjVjMmI5MDU5NzM5ZDZkMGU4MzljMWRkOThkNzVkMmU3Nzk1Nzg0NyJ9fX0="));
 
-			// 1.19 experimental:
-			defaultchances.put("camel", 0.2); headdata.put("camel", new Pair<String, String>("250f9c55-d0e6-4271-870f-752c44741a36", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzRiOGEzMzNkZmE5MmU3ZTVhOTVhZDRhZTJkODRiMWJhZmEzM2RjMjhjMDU0OTI1Mjc3ZjYwZTc5ZGFmYzhjNCJ9fX0="));
-		}
+		defaultchances.put("warden", 1.0); headdata.put("warden", new Pair<String, String>("5b4e4a47-fb56-41b9-9bcd-62f46ed51e3f", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmNmMzY3NGIyZGRjMGVmN2MzOWUzYjljNmI1ODY3N2RlNWNmMzc3ZDJlYjA3M2YyZjNmZTUwOTE5YjFjYTRjOSJ9fX0="));
 
-		if (onetwenty || onetwentydotfive || onetwentyone) {
-			defaultchances.put("sniffer", 0.25); headdata.put("sniffer", new Pair<String, String>("52704083-c7f8-4562-b20c-08b2ff0b90dc", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODdhZDkyMGE2NmUzOGNjMzQyNmE1YmZmMDg0NjY3ZTg3NzIxMTY5MTVlMjk4MDk4NTY3YzEzOWYyMjJlMmM0MiJ9fX0="));
-		}
+		// 1.19 experimental:
+		defaultchances.put("camel", 0.2); headdata.put("camel", new Pair<String, String>("250f9c55-d0e6-4271-870f-752c44741a36", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzRiOGEzMzNkZmE5MmU3ZTVhOTVhZDRhZTJkODRiMWJhZmEzM2RjMjhjMDU0OTI1Mjc3ZjYwZTc5ZGFmYzhjNCJ9fX0="));
 
-		if (onetwentydotfive || onetwentyone) {
-			defaultchances.put("armadillo", 0.5); headdata.put("armadillo", new Pair<String, String>("f5f30836-0009-4803-baaf-c5f2cd714201", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTE2NGVkMGUwZWY2OWIwY2U3ODE1ZTQzMDBiNDQxM2E0ODI4ZmNiMDA5MjkxODU0MzU0NWE0MThhNDhlMGMzYyJ9fX0="));
+		// 1.20
+		defaultchances.put("sniffer", 0.25); headdata.put("sniffer", new Pair<String, String>("52704083-c7f8-4562-b20c-08b2ff0b90dc", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODdhZDkyMGE2NmUzOGNjMzQyNmE1YmZmMDg0NjY3ZTg3NzIxMTY5MTVlMjk4MDk4NTY3YzEzOWYyMjJlMmM0MiJ9fX0="));
 
-			defaultchances.put("ashen_wolf", 0.25); headdata.put("ashen_wolf", new Pair<String, String>("f212a44b-becd-462d-86e2-60aabd6aa269", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDM5NzU0ZjBjZmY0MTk1NzhjZTk0YjVjODg2NjZkMjZkMDI3NWZmMmNjNzEzYjZlMzQ2MWI5MzViYWFjODQ0ZiJ9fX0="));
-			defaultchances.put("black_wolf", 0.25); headdata.put("black_wolf", new Pair<String, String>("c65eb64c-7df0-4107-a183-71f1f55d05c5", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTgyZjY0NzMxNWE3OGM0ZTEwZTQwNTcxYTRiODI5OTZlZjllNmQzOGI1MjVmN2JhNzcwY2RmZThlZWVkYmFjNiJ9fX0="));
-			defaultchances.put("chestnut_wolf", 0.25); headdata.put("chestnut_wolf", new Pair<String, String>("87284ae5-51d4-4306-991c-27af28d14ade", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzUxYTA3NDhiYTBmN2YwZGY0Y2RlM2Q5YjllZGNiMzVkYjIyNzNjZDQ1YjIxOTFhNWQyMzE1Y2Y4ZTc1NmNhZiJ9fX0="));
-			defaultchances.put("pale_wolf", 0.25); headdata.put("pale_wolf", new Pair<String, String>("1a2e072c-4b02-43dd-8555-30d29ec5ae1f", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmM4M2YyNmY0MjAwMDRkYmQzZWYxNWFlMDUyMTM2MTg4N2UxZTRkN2ZjYzRmNGJmYjBmZTFmNTRiMTZlNzcxMSJ9fX0="));
-			defaultchances.put("rusty_wolf", 0.25); headdata.put("rusty_wolf", new Pair<String, String>("30d3808f-fd7d-47ce-b453-2b719df18682", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjcwNDc3N2NjNTM2Mzc1N2E4NjM3YTE3NjM4ZWRhODM0ODdiMDM2MTVjOTk5ZjEyYTJjZDY1MzU4YWZlNGEwOCJ9fX0="));
-			defaultchances.put("snowy_wolf", 0.25); headdata.put("snowy_wolf", new Pair<String, String>("8dc1054a-eb32-4c67-b3c0-96791ed9b12f", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDQ4NzdlNTJkOTM2MTI3OGEzNzM2ZmNhYWE1ZDcwZWIxNDc4NWMxYTk5NWJkYWJhNWRlOTFlZDg4NjQ1OWVhOCJ9fX0="));
-			defaultchances.put("spotted_wolf", 0.25); headdata.put("spotted_wolf", new Pair<String, String>("3c1794da-25d2-4ab6-ae60-01382a128498", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOThlYzYxZmQ5Y2JjNGY2NjNjM2Y4NDllYTQ1MzgzZDQzMzE5YzJjNzcwYTJmMjhiOGM3YTUwOTc1YjgxYjNjOSJ9fX0="));
-			defaultchances.put("striped_wolf", 0.25); headdata.put("striped_wolf", new Pair<String, String>("9c86d0e8-fd07-493b-ad5a-4d25456f29c0", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmM0NmNmNDkyYWE1NTYxMjlmNzkxZTBiZWRjMDQ5NjQyNjNiNDk5NzYwYzk4OGFlMTc0MGZlMjc4Yzc2ZTEwYSJ9fX0="));
-			defaultchances.put("woods_wolf", 0.25); headdata.put("woods_wolf", new Pair<String, String>("022b9ef9-218a-4024-9543-e87fdb0bb9f7", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmU4YzJhNmUxMDRhM2U5ZDczOTczMjZmMDFiZjI1ODYyZjBhYWY5ZTM4MzBkNDlkYmI5YjRhNDMwNTM1ODQwNCJ9fX0="));
-		}
-		else {
-			defaultchances.put("wolf", 0.25); headdata.put("wolf", new Pair<String, String>("9a7c65fb-309f-4c1a-96a1-4522c197b7fe", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTk1Y2JiNGY3NWVhODc2MTdmMmY3MTNjNmQ0OWRhYzMyMDliYTFiZDRiOTM2OTY1NGIxNDU5ZWExNTMxNyJ9fX0="));
-		}
+		// 1.20.5
+		defaultchances.put("armadillo", 0.5); headdata.put("armadillo", new Pair<String, String>("f5f30836-0009-4803-baaf-c5f2cd714201", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTE2NGVkMGUwZWY2OWIwY2U3ODE1ZTQzMDBiNDQxM2E0ODI4ZmNiMDA5MjkxODU0MzU0NWE0MThhNDhlMGMzYyJ9fX0="));
 
-		if (onetwentyone) {
-			defaultchances.put("breeze", 0.05); headdata.put("breeze", new Pair<String, String>("a9a921df-57aa-4d15-b8dc-ac9c14736f2e", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTI3NTcyOGFmN2U2YTI5Yzg4MTI1YjY3NWEzOWQ4OGFlOTkxOWJiNjFmZGMyMDAzMzdmZWQ2YWIwYzQ5ZDY1YyJ9fX0="));
-			defaultchances.put("bogged", 0.1); headdata.put("bogged", new Pair<String, String>("5d534234-921a-4a5e-b68e-673319d0f1c2", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTNiOTAwM2JhMmQwNTU2MmM3NTExOWI4YTYyMTg1YzY3MTMwZTkyODJmN2FjYmFjNGJjMjgyNGMyMWViOTVkOSJ9fX0="));
-		}
+		defaultchances.put("ashen_wolf", 0.25); headdata.put("ashen_wolf", new Pair<String, String>("f212a44b-becd-462d-86e2-60aabd6aa269", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDM5NzU0ZjBjZmY0MTk1NzhjZTk0YjVjODg2NjZkMjZkMDI3NWZmMmNjNzEzYjZlMzQ2MWI5MzViYWFjODQ0ZiJ9fX0="));
+		defaultchances.put("black_wolf", 0.25); headdata.put("black_wolf", new Pair<String, String>("c65eb64c-7df0-4107-a183-71f1f55d05c5", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTgyZjY0NzMxNWE3OGM0ZTEwZTQwNTcxYTRiODI5OTZlZjllNmQzOGI1MjVmN2JhNzcwY2RmZThlZWVkYmFjNiJ9fX0="));
+		defaultchances.put("chestnut_wolf", 0.25); headdata.put("chestnut_wolf", new Pair<String, String>("87284ae5-51d4-4306-991c-27af28d14ade", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzUxYTA3NDhiYTBmN2YwZGY0Y2RlM2Q5YjllZGNiMzVkYjIyNzNjZDQ1YjIxOTFhNWQyMzE1Y2Y4ZTc1NmNhZiJ9fX0="));
+		defaultchances.put("pale_wolf", 0.25); headdata.put("pale_wolf", new Pair<String, String>("1a2e072c-4b02-43dd-8555-30d29ec5ae1f", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmM4M2YyNmY0MjAwMDRkYmQzZWYxNWFlMDUyMTM2MTg4N2UxZTRkN2ZjYzRmNGJmYjBmZTFmNTRiMTZlNzcxMSJ9fX0="));
+		defaultchances.put("rusty_wolf", 0.25); headdata.put("rusty_wolf", new Pair<String, String>("30d3808f-fd7d-47ce-b453-2b719df18682", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjcwNDc3N2NjNTM2Mzc1N2E4NjM3YTE3NjM4ZWRhODM0ODdiMDM2MTVjOTk5ZjEyYTJjZDY1MzU4YWZlNGEwOCJ9fX0="));
+		defaultchances.put("snowy_wolf", 0.25); headdata.put("snowy_wolf", new Pair<String, String>("8dc1054a-eb32-4c67-b3c0-96791ed9b12f", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDQ4NzdlNTJkOTM2MTI3OGEzNzM2ZmNhYWE1ZDcwZWIxNDc4NWMxYTk5NWJkYWJhNWRlOTFlZDg4NjQ1OWVhOCJ9fX0="));
+		defaultchances.put("spotted_wolf", 0.25); headdata.put("spotted_wolf", new Pair<String, String>("3c1794da-25d2-4ab6-ae60-01382a128498", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOThlYzYxZmQ5Y2JjNGY2NjNjM2Y4NDllYTQ1MzgzZDQzMzE5YzJjNzcwYTJmMjhiOGM3YTUwOTc1YjgxYjNjOSJ9fX0="));
+		defaultchances.put("striped_wolf", 0.25); headdata.put("striped_wolf", new Pair<String, String>("9c86d0e8-fd07-493b-ad5a-4d25456f29c0", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmM0NmNmNDkyYWE1NTYxMjlmNzkxZTBiZWRjMDQ5NjQyNjNiNDk5NzYwYzk4OGFlMTc0MGZlMjc4Yzc2ZTEwYSJ9fX0="));
+		defaultchances.put("woods_wolf", 0.25); headdata.put("woods_wolf", new Pair<String, String>("022b9ef9-218a-4024-9543-e87fdb0bb9f7", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmU4YzJhNmUxMDRhM2U5ZDczOTczMjZmMDFiZjI1ODYyZjBhYWY5ZTM4MzBkNDlkYmI5YjRhNDMwNTM1ODQwNCJ9fX0="));
+
+		// 1.21
+		defaultchances.put("breeze", 0.05); headdata.put("breeze", new Pair<String, String>("a9a921df-57aa-4d15-b8dc-ac9c14736f2e", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTI3NTcyOGFmN2U2YTI5Yzg4MTI1YjY3NWEzOWQ4OGFlOTkxOWJiNjFmZGMyMDAzMzdmZWQ2YWIwYzQ5ZDY1YyJ9fX0="));
+		defaultchances.put("bogged", 0.1); headdata.put("bogged", new Pair<String, String>("5d534234-921a-4a5e-b68e-673319d0f1c2", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTNiOTAwM2JhMmQwNTU2MmM3NTExOWI4YTYyMTg1YzY3MTMwZTkyODJmN2FjYmFjNGJjMjgyNGMyMWViOTVkOSJ9fX0="));
 
 
 		try {
