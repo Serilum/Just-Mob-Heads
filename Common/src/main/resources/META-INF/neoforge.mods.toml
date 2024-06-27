@@ -6,7 +6,7 @@ logoFile="icon.png"
 
 [[mods]]
 modId="justmobheads"
-version="7.9"
+version="8.0"
 displayName="Just Mob Heads"
 displayURL="https://serilum.com/mod/just-mob-heads"
 authors="Rick South"
@@ -14,7 +14,7 @@ description='''Mobs have a configurable chance to drop their heads on death. Use
 '''
 credits='''Thank you very much to my Membership sponsors for supporting the development of this mod:  
 
-Alister, Andrean Olgo, aternosorg, BirdieMiner, Cherriesaurus, Jeremy Langford, Michael W. S., Rare Students, Shana Gitnick, Tyler Behl   
+Alister, Andrean Olgo, aternosorg, BirdieMiner, Cherriesaurus, Michael W. S., Shana Gitnick, Sukhmai, Tyler Behl   
 
 If you would like to contribute too, check out https://serilum.com/donate. Appreciate it! <3   
 '''
@@ -22,7 +22,7 @@ If you would like to contribute too, check out https://serilum.com/donate. Appre
 [[dependencies.justmobheads]]
     modId="collective"
     type="required"
-    versionRange="[7.60,)"
+    versionRange="[7.65,)"
     ordering="NONE"
     side="BOTH"
 
