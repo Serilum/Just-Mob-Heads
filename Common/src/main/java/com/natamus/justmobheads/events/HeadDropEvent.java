@@ -1,6 +1,7 @@
 package com.natamus.justmobheads.events;
 
 import com.mojang.authlib.GameProfile;
+import com.natamus.collective.functions.StringFunctions;
 import com.natamus.justmobheads.config.ConfigHandler;
 import com.natamus.justmobheads.util.HeadData;
 import com.natamus.justmobheads.util.MobHeads;
@@ -92,8 +93,8 @@ public class HeadDropEvent {
 		if (ConfigHandler.mobSpecificDropChances) {
 			double chance = -1;
 			if (headname.equals("")) {
-				if (HeadData.headchances.containsKey(mobname)) {
-					chance = HeadData.headchances.get(mobname);
+				if (HeadData.headChances.containsKey(mobname)) {
+					chance = HeadData.headChances.get(mobname);
 				}
 			}
 			else {
@@ -159,11 +160,18 @@ public class HeadDropEvent {
 			return;
 		}
 
-		if (!HeadData.headdata.containsKey(headName.toLowerCase().replace(" ", "_"))) {
+		String dataHeadName = headName.toLowerCase().replace(" ", "_");
+		if (!HeadData.headTextureData.containsKey(dataHeadName)) {
 			return;
 		}
 
-		itemStack.setHoverName(Component.literal(headName + " Head"));
+		if (!compoundTagItemStack.contains("note_block_sound")) {
+			if (HeadData.headNoteBlockSounds.containsKey(dataHeadName)) {
+				compoundTagItemStack.putString("note_block_sound", HeadData.headNoteBlockSounds.get(dataHeadName));
+			}
+		}
+
+		itemStack.setHoverName(Component.literal(StringFunctions.capitalizeEveryWord(headName.replace("_", " ")) + " Head"));
     }
 
 	// Legacy code for previously generated mob heads. Might be removed in the future.
@@ -216,8 +224,8 @@ public class HeadDropEvent {
 			String headid = uuid.toString();
 
 			String correctheadname = "";
-			for (String headname : HeadData.headdata.keySet()) {
-				String headnameid = HeadData.headdata.get(headname).getFirst();
+			for (String headname : HeadData.headTextureData.keySet()) {
+				String headnameid = HeadData.headTextureData.get(headname).getFirst();
 				if (headid.equals(headnameid)) {
 					correctheadname = headname;
 					break;

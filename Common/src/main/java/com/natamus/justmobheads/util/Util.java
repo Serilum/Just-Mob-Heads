@@ -14,7 +14,7 @@ public class Util {
 	private static final File file = new File(dirpath + File.separator + "headchances.txt");
 	
 	public static boolean generateChanceConfig(Map<String, Double> defaultchances) throws IOException {
-		HeadData.headchances = new HashMap<String, Double>();
+		HeadData.headChances = new HashMap<String, Double>();
 		
 		PrintWriter writer;
 		if (!dir.isDirectory() || !file.isFile()) {
@@ -41,7 +41,7 @@ public class Util {
 					continue;
 				}
 				
-				HeadData.headchances.put(mobname, chancevalue);
+				HeadData.headChances.put(mobname, chancevalue);
 			}
 			
 			List<String> appendkeys = new ArrayList<String>();
@@ -49,7 +49,7 @@ public class Util {
 			List<String> defaultkeys = new ArrayList<String>(defaultchances.keySet());
 			Collections.sort(defaultkeys);
 			for (String mobname : defaultkeys) {
-				if (!HeadData.headchances.containsKey(mobname)) {
+				if (!HeadData.headChances.containsKey(mobname)) {
 					appendkeys.add(mobname);
 				}
 			}
@@ -62,7 +62,7 @@ public class Util {
 					Double chancevalue = defaultchances.get(mobname);
 					
 					writer.println('"' + mobname + '"' + " : " + chancevalue + ",");
-					HeadData.headchances.put(mobname, chancevalue);
+					HeadData.headChances.put(mobname, chancevalue);
 				}
 				
 				writer.close();
@@ -78,7 +78,7 @@ public class Util {
 				Double chancevalue = defaultchances.get(mobname);
 				
 				writer.println('"' + mobname + '"' + " : " + chancevalue + ",");
-				HeadData.headchances.put(mobname, chancevalue);
+				HeadData.headChances.put(mobname, chancevalue);
 			}
 			
 			writer.close();

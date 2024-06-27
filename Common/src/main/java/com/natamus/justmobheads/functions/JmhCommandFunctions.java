@@ -8,7 +8,7 @@ import net.minecraft.network.chat.Component;
 
 public class JmhCommandFunctions {
 	public static final SuggestionProvider<CommandSourceStack> mobHeadSuggestions = (context, builder) -> SharedSuggestionProvider.suggest(
-		HeadData.headdata.keySet(), builder,
+		HeadData.headTextureData.keySet(), builder,
         value -> value,
         value -> Component.literal(value)
     );
