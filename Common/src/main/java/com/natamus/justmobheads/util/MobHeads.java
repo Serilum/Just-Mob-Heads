@@ -34,18 +34,19 @@ public class MobHeads {
 	static List<String> cattypes = Arrays.asList("tabby", "tuxedo", "red", "siamese", "british_shorthair", "calico", "persian", "ragdoll", "white", "jellie", "black");
 	static List<String> axolotltypes = Arrays.asList("lucy", "wild", "gold", "cyan", "blue");
 	
-	public static ItemStack getMobHead(String mobname, Integer amount) {
-		Pair<String, String> mobdata = HeadData.headdata.get(mobname);
-		if (mobdata == null) {
+	public static ItemStack getMobHead(String mobName, Integer amount) {
+		Pair<String, String> textureData = HeadData.headTextureData.get(mobName);
+		if (textureData == null) {
 			return null;
 		}
 
-		String formattedMobName = capitalizeFirst(mobname.replace("_", " "));
+		String headNoteBlockSound = HeadData.headNoteBlockSounds.get(mobName) == null ? "" : HeadData.headNoteBlockSounds.get(mobName);
+		String formattedMobName = capitalizeFirst(mobName.replace("_", " "));
 
-		String oldid = mobdata.getFirst();
-		String texture = mobdata.getSecond();
+		String oldid = textureData.getFirst();
+		String texture = textureData.getSecond();
 
-		ItemStack texturedHeadStack = HeadFunctions.getNewTexturedHead(mobname, texture, oldid, amount);
+		ItemStack texturedHeadStack = HeadFunctions.getNewTexturedHead(mobName, texture, oldid, headNoteBlockSound, amount);
 		texturedHeadStack.set(DataComponents.CUSTOM_NAME, Component.literal(formattedMobName + " Head"));
 
 		return texturedHeadStack;

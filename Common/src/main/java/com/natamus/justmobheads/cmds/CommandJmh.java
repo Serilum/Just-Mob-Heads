@@ -29,7 +29,7 @@ public class CommandJmh {
 				CommandSourceStack source = command.getSource();
 				MessageFunctions.sendMessage(source, "Reloading head chances config file now.", ChatFormatting.DARK_GREEN);
 				try {
-					if (Util.generateChanceConfig(HeadData.defaultchances)) {
+					if (Util.generateChanceConfig(HeadData.defaultHeadChances)) {
 						MessageFunctions.sendMessage(source, "Succesfully loaded! The dropchances have been altered.", ChatFormatting.DARK_GREEN);
 					}
 					else {
@@ -48,7 +48,7 @@ public class CommandJmh {
 				MessageFunctions.sendMessage(source, "You can generate the following mob heads:", ChatFormatting.DARK_GREEN);
 				MessageFunctions.sendMessage(source, " Usage: /jmh head <name> <amount>:", ChatFormatting.DARK_GREEN);
 
-				List<String> mobnames = new ArrayList<String>(HeadData.headdata.keySet());
+				List<String> mobnames = new ArrayList<String>(HeadData.headTextureData.keySet());
 				Collections.sort(mobnames);
 				String mnstr = String.join(", ", mobnames);
 				MessageFunctions.sendMessage(source, mnstr, ChatFormatting.YELLOW);
@@ -73,7 +73,7 @@ public class CommandJmh {
 		CommandSourceStack source = command.getSource();
 		String mobname = StringArgumentType.getString(command, "mob-name").toLowerCase();
 
-		if (!HeadData.headdata.containsKey(mobname)) {
+		if (!HeadData.headTextureData.containsKey(mobname)) {
 			MessageFunctions.sendMessage(source, "The mobname '" + mobname + "' does not exist. You can get a list of all possible heads with:", ChatFormatting.RED);
 			MessageFunctions.sendMessage(source, " Usage: /jmh head list", ChatFormatting.RED);
 			return 1;
