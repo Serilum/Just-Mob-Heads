@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "justmobheads",
-  "version": "8.1",
+  "version": "8.2",
 
   "name": "Just Mob Heads",
   "description": "Mobs have a configurable chance to drop their heads on death. Uses lag-free vanilla resources. Collect them all!",
@@ -23,7 +23,7 @@
     "fabric": "*",
     "minecraft": ">=1.21",
     "java": ">=21",
-    "collective": ">=7.67"
+    "collective": ">=7.71"
   },
 
   "custom": {
@@ -44,11 +44,10 @@
 	  " Alister",
 	  " Andrean Olgo",
 	  " aternosorg",
-	  " BirdieMiner",
 	  " Cherriesaurus",
 	  " Michael W. S.",
+	  " Nahuel Fernandez",
 	  " Shana Gitnick",
-	  " Sukhmai",
 	  " Tyler Behl"
   ]
 }
