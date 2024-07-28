@@ -6,7 +6,7 @@ logoFile="icon.png"
 
 [[mods]]
 modId="justmobheads"
-version="8.2"
+version="8.3"
 displayName="Just Mob Heads"
 displayURL="https://serilum.com/mod/just-mob-heads"
 authors="Rick South"
@@ -23,7 +23,7 @@ If you would like to contribute too, check out https://serilum.com/donate. Appre
     modId="collective"
     type="required"
     mandatory=true
-    versionRange="[7.71,)"
+    versionRange="[7.78,)"
     ordering="NONE"
     side="BOTH"
 

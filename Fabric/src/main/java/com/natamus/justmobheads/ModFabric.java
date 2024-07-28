@@ -1,6 +1,7 @@
 package com.natamus.justmobheads;
 
 import com.natamus.collective.check.RegisterMod;
+import com.natamus.collective.check.ShouldLoadCheck;
 import com.natamus.collective.fabric.callbacks.CollectiveEntityEvents;
 import com.natamus.collective.fabric.callbacks.CollectivePlayerEvents;
 import com.natamus.justmobheads.cmds.CommandJmh;
@@ -19,6 +20,10 @@ public class ModFabric implements ModInitializer {
 	
 	@Override
 	public void onInitialize() {
+		if (!ShouldLoadCheck.shouldLoad(Reference.MOD_ID)) {
+			return;
+		}
+
 		setGlobalConstants();
 		ModCommon.init();
 
