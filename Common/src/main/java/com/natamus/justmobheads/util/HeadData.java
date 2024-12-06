@@ -241,6 +241,10 @@ public class HeadData {
 		defaultHeadChances.put("bogged", 0.1); headTextureData.put("bogged", new Pair<String, String>("5d534234-921a-4a5e-b68e-673319d0f1c2", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTNiOTAwM2JhMmQwNTU2MmM3NTExOWI4YTYyMTg1YzY3MTMwZTkyODJmN2FjYmFjNGJjMjgyNGMyMWViOTVkOSJ9fX0=")); headNoteBlockSounds.put("bogged", "minecraft:entity.bogged.ambient");
 
 
+		// 1.21.4
+		defaultHeadChances.put("creaking", 0.5); headTextureData.put("creaking", new Pair<String, String>("7058000b-6783-41e5-b16e-1e525944171d", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWVmMDA5ZDg2ZmNjNDIwMzYxYTY4Y2JiOGJmYTg1YTc0MjJiZmU5ZTJmMzA2MjQ3YmUxZTFiNWQyMGZjNTJiMSJ9fX0=")); headNoteBlockSounds.put("creaking", "minecraft:entity.creaking.activate");
+
+
 		try {
 			Util.generateChanceConfig(defaultHeadChances);
 		} catch (Exception ex) {

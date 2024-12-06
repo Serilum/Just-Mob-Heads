@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "justmobheads",
-  "version": "8.3",
+  "version": "8.4",
 
   "name": "Just Mob Heads",
   "description": "Mobs have a configurable chance to drop their heads on death. Uses lag-free vanilla resources. Collect them all!",
