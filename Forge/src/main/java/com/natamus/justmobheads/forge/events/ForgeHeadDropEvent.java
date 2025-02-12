@@ -11,23 +11,21 @@ import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
-@EventBusSubscriber
 public class ForgeHeadDropEvent {
     @SubscribeEvent
-    public void registerCommands(RegisterCommandsEvent e) {
+    public static void registerCommands(RegisterCommandsEvent e) {
     	CommandJmh.register(e.getDispatcher());
     }
 
 	@SubscribeEvent
-	public void mobItemDrop(LivingDropsEvent e) {
+	public static void mobItemDrop(LivingDropsEvent e) {
 		LivingEntity livingEntity = e.getEntity();
 		HeadDropEvent.mobItemDrop(livingEntity.level(), livingEntity, e.getSource());
 	}
 	
     @SubscribeEvent
-    public void onItemPickup(EntityItemPickupEvent e) {
+    public static void onItemPickup(EntityItemPickupEvent e) {
         Player player = e.getEntity();
         HeadDropEvent.onItemPickup(player.level(), player, e.getItem().getItem());
     }
