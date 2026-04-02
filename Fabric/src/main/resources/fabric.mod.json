@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "id": "justmobheads",
+  "version": "9.0",
+
+  "name": "Just Mob Heads",
+  "description": "Mobs have a configurable chance to drop their heads on death. Uses lag-free vanilla resources. Collect them all!",
+  "authors": [ "Rick South" ],
+  "contact": {
+    "homepage": "https://serilum.com/mod/just-mob-heads",
+    "sources": "https://github.com/Serilum/Just-Mob-Heads",
+    "issues": "https://github.com/Serilum/.issue-tracker/labels/Mod:%20Just%20Mob%20Heads"
+  },
+
+  "license": "All Right Reserved",
+  "icon": "icon.png",
+
+  "environment": "*",
+  "entrypoints": { "main": [ "com.natamus.justmobheads.ModFabric" ], "modmenu": [ "com.natamus.justmobheads.fabric.config.IntegrateModMenu" ] },
+
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "fabric-api": "*",
+    "minecraft": ">=26.1",
+    "java": ">=25",
+    "collective": ">=8.16"
+  },
+
+  "custom": {
+    "modmenu": {
+      "links": {
+        "Donate <3" : "https://serilum.com/donate"
+      }
+    }
+  },
+
+  "contributors": [
+	  " ",
+	  "Thank you very much to my Membership sponsors for supporting the development of this mod!",
+	  " ",
+	  "If you would like to contribute too, check out https://serilum.com/donate.",
+	  " ",
+	  "Membership sponsors:",
+	  " akanealw",
+	  " Alister",
+	  " Andrean Olgo",
+	  " aternosorg",
+	  " Cherriesaurus",
+	  " MWS",
+	  " t128",
+	  " Tyler Behl",
+	  " XAgent",
+	  " ตัวตรึง พระนคร"
+  ]
+}
