@@ -67,7 +67,7 @@ public class MobHeads {
 		String texture = textureData.getSecond();
 
 		ItemStack texturedHeadStack = HeadFunctions.getNewTexturedHead(mobName, texture, oldid, headNoteBlockSound, amount);
-		texturedHeadStack.set(DataComponents.CUSTOM_NAME, Component.literal(formattedMobName + " Head"));
+		texturedHeadStack.set(DataComponents.CUSTOM_NAME, Component.translatable("collective.justmobheads.gui.head", formattedMobName));
 
 		return texturedHeadStack;
 	}
