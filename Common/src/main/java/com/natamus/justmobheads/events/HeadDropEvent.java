@@ -168,6 +168,6 @@ public class HeadDropEvent {
 			return;
 		}
 
-		itemStack.set(DataComponents.CUSTOM_NAME, Component.literal(headName + " Head"));
+		itemStack.set(DataComponents.CUSTOM_NAME, Component.translatable("collective.justmobheads.gui.head", headName));
     }
 }
