@@ -27,16 +27,16 @@ public class CommandJmh {
 			.then(Commands.literal("reload")
 			.executes((command) -> {
 				CommandSourceStack source = command.getSource();
-				MessageFunctions.sendMessage(source, "Reloading head chances config file now.", ChatFormatting.DARK_GREEN);
+				MessageFunctions.sendTranslatableMessage(source, "collective.justmobheads.message.reloadingheadchances", ChatFormatting.DARK_GREEN);
 				try {
 					if (Util.generateChanceConfig(HeadData.defaultHeadChances)) {
-						MessageFunctions.sendMessage(source, "Succesfully loaded! The dropchances have been altered.", ChatFormatting.DARK_GREEN);
+						MessageFunctions.sendTranslatableMessage(source, "collective.justmobheads.message.succesfullyloadeddropchances", ChatFormatting.DARK_GREEN);
 					}
 					else {
-						MessageFunctions.sendMessage(source, "Generated new config file. Using the default chances.", ChatFormatting.DARK_GREEN);
+						MessageFunctions.sendTranslatableMessage(source, "collective.justmobheads.message.generatedconfigfile", ChatFormatting.DARK_GREEN);
 					}
 				} catch (Exception ex) {
-					MessageFunctions.sendMessage(source, "Something went wrong while loading the config file.", ChatFormatting.RED);
+					MessageFunctions.sendTranslatableMessage(source, "collective.justmobheads.message.somethingwentwrong", ChatFormatting.RED);
 				}
 				return 1;
 			}))
@@ -45,8 +45,8 @@ public class CommandJmh {
 			.executes((command) -> {
 				CommandSourceStack source = command.getSource();
 
-				MessageFunctions.sendMessage(source, "You can generate the following mob heads:", ChatFormatting.DARK_GREEN);
-				MessageFunctions.sendMessage(source, " Usage: /jmh head <name> <amount>:", ChatFormatting.DARK_GREEN);
+				MessageFunctions.sendTranslatableMessage(source, "collective.justmobheads.message.generatefollowingmob", ChatFormatting.DARK_GREEN);
+				MessageFunctions.sendTranslatableMessage(source, " ", "collective.justmobheads.message.usagejmhheadname", ChatFormatting.DARK_GREEN);
 
 				List<String> mobnames = new ArrayList<String>(HeadData.headTextureData.keySet());
 				Collections.sort(mobnames);
@@ -74,8 +74,8 @@ public class CommandJmh {
 		String mobname = StringArgumentType.getString(command, "mob-name").toLowerCase();
 
 		if (!HeadData.headTextureData.containsKey(mobname)) {
-			MessageFunctions.sendMessage(source, "The mobname '" + mobname + "' does not exist. You can get a list of all possible heads with:", ChatFormatting.RED);
-			MessageFunctions.sendMessage(source, " Usage: /jmh head list", ChatFormatting.RED);
+			MessageFunctions.sendTranslatableMessage(source, "collective.justmobheads.message.mobnameexistget", ChatFormatting.RED, mobname);
+			MessageFunctions.sendTranslatableMessage(source, " ", "collective.justmobheads.message.usagejmhheadlist", ChatFormatting.RED);
 			return 1;
 		}
 
@@ -84,7 +84,7 @@ public class CommandJmh {
 			player = source.getPlayerOrException();
 		}
 		catch (CommandSyntaxException ex) {
-			MessageFunctions.sendMessage(source, "This command can only be executed as a player in-game.", ChatFormatting.RED);
+			MessageFunctions.sendTranslatableMessage(source, "collective.shared.message.playeronly", ChatFormatting.RED);
 			return 1;
 		}
 
@@ -98,7 +98,7 @@ public class CommandJmh {
 			s = "s";
 		}
 
-		MessageFunctions.sendMessage(source, "Successfully generated " + amount + " " + StringFunctions.capitalizeFirst(mobname.replace("_", " ")) + " head" + s + ".", ChatFormatting.DARK_GREEN);
+		MessageFunctions.sendTranslatableMessage(source, "collective.shared.message.successfullygeneratedhead", ChatFormatting.DARK_GREEN, amount, StringFunctions.capitalizeFirst(mobname.replace("_", " ")));
 		return 1;
 	}
 }

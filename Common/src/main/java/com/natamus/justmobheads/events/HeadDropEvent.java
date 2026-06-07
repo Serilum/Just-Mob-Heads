@@ -171,7 +171,7 @@ public class HeadDropEvent {
 			}
 		}
 
-		itemStack.setHoverName(Component.literal(StringFunctions.capitalizeEveryWord(headName.replace("_", " ")) + " Head"));
+		itemStack.setHoverName(Component.translatable("collective.justmobheads.gui.head", StringFunctions.capitalizeEveryWord(headName.replace("_", " "))));
     }
 
 	// Legacy code for previously generated mob heads. Might be removed in the future.

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "justmobheads",
-  "version": "8.5",
+  "version": "9.1",
 
   "name": "Just Mob Heads",
   "description": "Mobs have a configurable chance to drop their heads on death. Uses lag-free vanilla resources. Collect them all!",
@@ -23,7 +23,7 @@
     "fabric": "*",
     "minecraft": ">=1.20",
     "java": ">=17",
-    "collective": ">=7.91"
+    "collective": ">=8.25"
   },
 
   "custom": {
@@ -41,15 +41,12 @@
 	  "If you would like to contribute too, check out https://serilum.com/donate.",
 	  " ",
 	  "Membership sponsors:",
-	  " Alister",
 	  " Andrean Olgo",
 	  " aternosorg",
 	  " Cherriesaurus",
-	  " David Sanchez",
-	  " drdog111",
-	  " Michael W. S.",
-	  " t128",
-	  " Tyler Behl",
-	  " XAgent"
+	  " Linda Jansen",
+	  " Michelle Smith",
+	  " MWS",
+	  " Tyler Behl"
   ]
 }
