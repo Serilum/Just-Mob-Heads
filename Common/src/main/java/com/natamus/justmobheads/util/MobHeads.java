@@ -3,6 +3,7 @@ package com.natamus.justmobheads.util;
 import com.mojang.datafixers.util.Pair;
 import com.natamus.collective.functions.EntityFunctions;
 import com.natamus.collective.functions.HeadFunctions;
+import com.natamus.collective.functions.MessageFunctions;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
@@ -45,7 +46,7 @@ public class MobHeads {
 		String texture = textureData.getSecond();
 
 		ItemStack texturedHeadStack = HeadFunctions.getNewTexturedHead(mobName, texture, oldid, headNoteBlockSound, amount);
-		texturedHeadStack.setHoverName(Component.translatable("collective.justmobheads.gui.head", formattedMobName));
+		texturedHeadStack.setHoverName(MessageFunctions.getTranslatableComponent("collective.justmobheads.gui.head", formattedMobName));
 
 		return texturedHeadStack;
 	}
