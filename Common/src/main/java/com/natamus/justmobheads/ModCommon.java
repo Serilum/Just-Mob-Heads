@@ -1,7 +1,9 @@
 package com.natamus.justmobheads;
 
+import com.natamus.collective.translations.ServerTranslationPack;
 import com.natamus.justmobheads.config.ConfigHandler;
 import com.natamus.justmobheads.util.HeadData;
+import com.natamus.justmobheads.util.Reference;
 
 public class ModCommon {
 
@@ -12,5 +14,7 @@ public class ModCommon {
 
 	private static void load() {
 		HeadData.init();
+
+		ServerTranslationPack.requireClientTranslations(Reference.NAME);
 	}
 }
