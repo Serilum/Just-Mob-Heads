@@ -269,7 +269,9 @@ public class HeadData {
 
 		defaultHeadChances.put("nautilus", 0.05); headTextureData.put("nautilus", new Pair<>("c82b1407-60ed-4dab-9299-99497e6e7652", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2JiMzQwZGQzMzAyNjE1MzQ4ZGU1MTYyZmUxNjcwYjljNWM5YzYxNmNkOTJkMmRlOWQ4Mzk4Y2IzM2U4NDJhZSJ9fX0=")); headNoteBlockSounds.put("nautilus", "entity.nautilus.ambient");
 		defaultHeadChances.put("zombie_nautilus", 0.1); headTextureData.put("zombie_nautilus", new Pair<>("834e409d-f3cd-49c3-b35a-7b816d24b009", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmQ5YTkzMzM3NmRhNDRjMzM5MTMwN2NiOWY0Y2YwM2YxNmYzYTU0ZjQ5NWZkNWExMWJhZDhhMzczZjlkNTcyMCJ9fX0=")); headNoteBlockSounds.put("zombie_nautilus", "entity.zombie_nautilus.ambient");
-		
+
+		// 26.2
+		defaultHeadChances.put("sulfur_cube", 0.05); headTextureData.put("sulfur_cube", new Pair<>("b2b07fd5-2576-4ad8-ba31-6851cabf39d7", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjA1ZWMwMjQxZjA4NGUxNzc2YTIwMWY2ZGY4YzEyNGM4NjM3NjcxZmQ4NWUwYWY1ZTc3MDkwZjRlOWMzODYwMiJ9fX0=")); headNoteBlockSounds.put("sulfur_cube", "minecraft:entity.small_sulfur_cube.squish");
 
 		try {
 			Util.generateChanceConfig(defaultHeadChances);
