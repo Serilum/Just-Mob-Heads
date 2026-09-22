@@ -16,6 +16,7 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.server.permissions.Permissions;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.util.Prediction;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
@@ -91,7 +92,7 @@ public class CommandJmh {
 
 		ItemStack headstack = MobHeads.getMobHead(mobname, amount);
 		if (!player.getInventory().add(headstack)) {
-			player.drop(headstack, false);
+			player.drop(headstack, false, Prediction.PREDICTED);
 		}
 
 		String s = "";
