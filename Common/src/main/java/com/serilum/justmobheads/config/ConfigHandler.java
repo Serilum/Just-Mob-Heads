@@ -1,7 +1,7 @@
-package com.natamus.justmobheads.config;
+package com.serilum.justmobheads.config;
 
 import com.natamus.collective.config.DuskConfig;
-import com.natamus.justmobheads.util.Reference;
+import com.serilum.justmobheads.util.Reference;
 
 import java.util.Arrays;
 import java.util.HashMap;

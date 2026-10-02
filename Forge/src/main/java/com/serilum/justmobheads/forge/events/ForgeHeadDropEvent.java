@@ -1,8 +1,8 @@
-package com.natamus.justmobheads.forge.events;
+package com.serilum.justmobheads.forge.events;
 
 import com.natamus.collective.functions.WorldFunctions;
-import com.natamus.justmobheads.cmds.CommandJmh;
-import com.natamus.justmobheads.events.HeadDropEvent;
+import com.serilum.justmobheads.cmds.CommandJmh;
+import com.serilum.justmobheads.events.HeadDropEvent;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -13,10 +13,10 @@ import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class ForgeHeadDropEvent {
-    @SubscribeEvent
-    public static void registerCommands(RegisterCommandsEvent e) {
-    	CommandJmh.register(e.getDispatcher());
-    }
+	@SubscribeEvent
+	public static void registerCommands(RegisterCommandsEvent e) {
+		CommandJmh.register(e.getDispatcher());
+	}
 
 	@SubscribeEvent
 	public static void mobItemDrop(LivingDropsEvent e) {
@@ -24,11 +24,11 @@ public class ForgeHeadDropEvent {
 		HeadDropEvent.mobItemDrop(livingEntity.level(), livingEntity, e.getSource());
 	}
 	
-    @SubscribeEvent
-    public static void onItemPickup(EntityItemPickupEvent e) {
-        Player player = e.getEntity();
-        HeadDropEvent.onItemPickup(player.level(), player, e.getItem().getItem());
-    }
+	@SubscribeEvent
+	public static void onItemPickup(EntityItemPickupEvent e) {
+		Player player = e.getEntity();
+		HeadDropEvent.onItemPickup(player.level(), player, e.getItem().getItem());
+	}
 
 	@SubscribeEvent
 	public static void onPlayerHeadBreak(BlockEvent.BreakEvent e) {

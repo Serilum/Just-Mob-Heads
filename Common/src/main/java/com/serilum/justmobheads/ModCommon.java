@@ -1,9 +1,9 @@
-package com.natamus.justmobheads;
+package com.serilum.justmobheads;
 
 import com.natamus.collective.translations.ServerTranslationPack;
-import com.natamus.justmobheads.config.ConfigHandler;
-import com.natamus.justmobheads.util.HeadData;
-import com.natamus.justmobheads.util.Reference;
+import com.serilum.justmobheads.config.ConfigHandler;
+import com.serilum.justmobheads.util.HeadData;
+import com.serilum.justmobheads.util.Reference;
 
 public class ModCommon {
 

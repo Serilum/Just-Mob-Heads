@@ -1,10 +1,10 @@
-package com.natamus.justmobheads.events;
+package com.serilum.justmobheads.events;
 
 import com.mojang.authlib.GameProfile;
 import com.natamus.collective.functions.StringFunctions;
-import com.natamus.justmobheads.config.ConfigHandler;
-import com.natamus.justmobheads.util.HeadData;
-import com.natamus.justmobheads.util.MobHeads;
+import com.serilum.justmobheads.config.ConfigHandler;
+import com.serilum.justmobheads.util.HeadData;
+import com.serilum.justmobheads.util.MobHeads;
 import joptsimple.internal.Strings;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -131,15 +131,15 @@ public class HeadDropEvent {
 		world.addFreshEntity(mobhead);
 	}
 	
-    public static void onItemPickup(Level level, Player player, ItemStack itemStack) {
-        if (level.isClientSide) {
-            return;
-        }
+	public static void onItemPickup(Level level, Player player, ItemStack itemStack) {
+		if (level.isClientSide) {
+			return;
+		}
 
 		Item item = itemStack.getItem();
-        if (!(item instanceof PlayerHeadItem)) {
-            return;
-        }
+		if (!(item instanceof PlayerHeadItem)) {
+			return;
+		}
 
 		String headName = "";
 		CompoundTag compoundTagItemStack = itemStack.getTag();
@@ -172,7 +172,7 @@ public class HeadDropEvent {
 		}
 
 		itemStack.setHoverName(Component.translatable("collective.justmobheads.gui.head", StringFunctions.capitalizeEveryWord(headName.replace("_", " "))));
-    }
+	}
 
 	// Legacy code for previously generated mob heads. Might be removed in the future.
 	public static boolean onPlayerHeadBreak(Level world, Player player, BlockPos pos, BlockState state, BlockEntity blockEntity) {

@@ -1,4 +1,4 @@
-package com.natamus.justmobheads.cmds;
+package com.serilum.justmobheads.cmds;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
@@ -7,10 +7,10 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.natamus.collective.functions.MessageFunctions;
 import com.natamus.collective.functions.StringFunctions;
-import com.natamus.justmobheads.functions.JmhCommandFunctions;
-import com.natamus.justmobheads.util.HeadData;
-import com.natamus.justmobheads.util.MobHeads;
-import com.natamus.justmobheads.util.Util;
+import com.serilum.justmobheads.functions.JmhCommandFunctions;
+import com.serilum.justmobheads.util.HeadData;
+import com.serilum.justmobheads.util.MobHeads;
+import com.serilum.justmobheads.util.Util;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;

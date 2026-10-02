@@ -1,12 +1,12 @@
-package com.natamus.justmobheads;
+package com.serilum.justmobheads;
 
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
 import com.natamus.collective.fabric.callbacks.CollectiveEntityEvents;
 import com.natamus.collective.fabric.callbacks.CollectivePlayerEvents;
-import com.natamus.justmobheads.cmds.CommandJmh;
-import com.natamus.justmobheads.events.HeadDropEvent;
-import com.natamus.justmobheads.util.Reference;
+import com.serilum.justmobheads.cmds.CommandJmh;
+import com.serilum.justmobheads.events.HeadDropEvent;
+import com.serilum.justmobheads.util.Reference;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;

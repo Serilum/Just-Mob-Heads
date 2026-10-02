@@ -1,10 +1,10 @@
-package com.natamus.justmobheads;
+package com.serilum.justmobheads;
 
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
-import com.natamus.justmobheads.forge.config.IntegrateForgeConfig;
-import com.natamus.justmobheads.forge.events.ForgeHeadDropEvent;
-import com.natamus.justmobheads.util.Reference;
+import com.serilum.justmobheads.forge.config.IntegrateForgeConfig;
+import com.serilum.justmobheads.forge.events.ForgeHeadDropEvent;
+import com.serilum.justmobheads.util.Reference;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;

@@ -1,7 +1,7 @@
-package com.natamus.justmobheads.forge.config;
+package com.serilum.justmobheads.forge.config;
 
 import com.natamus.collective.config.DuskConfig;
-import com.natamus.justmobheads.util.Reference;
+import com.serilum.justmobheads.util.Reference;
 import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.fml.ModLoadingContext;
 

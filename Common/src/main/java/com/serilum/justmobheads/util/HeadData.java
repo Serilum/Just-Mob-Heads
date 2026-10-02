@@ -1,4 +1,4 @@
-package com.natamus.justmobheads.util;
+package com.serilum.justmobheads.util;
 
 import com.mojang.datafixers.util.Pair;
 
