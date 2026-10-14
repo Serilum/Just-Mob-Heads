@@ -7,7 +7,7 @@ import com.natamus.collective.functions.MessageFunctions;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.animal.axolotl.Axolotl;
 import net.minecraft.world.entity.animal.chicken.Chicken;
@@ -19,7 +19,6 @@ import net.minecraft.world.entity.animal.cow.CowVariants;
 import net.minecraft.world.entity.animal.cow.MushroomCow;
 import net.minecraft.world.entity.animal.equine.Horse;
 import net.minecraft.world.entity.animal.equine.Llama;
-import net.minecraft.world.entity.animal.equine.TraderLlama;
 import net.minecraft.world.entity.animal.feline.Cat;
 import net.minecraft.world.entity.animal.feline.CatVariant;
 import net.minecraft.world.entity.animal.fox.Fox;
@@ -34,6 +33,7 @@ import net.minecraft.world.entity.animal.pig.PigVariants;
 import net.minecraft.world.entity.animal.rabbit.Rabbit;
 import net.minecraft.world.entity.animal.sheep.Sheep;
 import net.minecraft.world.entity.animal.wolf.Wolf;
+import net.minecraft.world.entity.animal.wolf.WolfVariant;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.zombie.ZombieVillager;
 import net.minecraft.world.entity.npc.villager.Villager;
@@ -46,16 +46,21 @@ import net.minecraft.world.level.block.WeatheringCopper;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class MobHeads {
 	static List<String> horsetypes = Arrays.asList("white", "creamy", "chestnut", "brown", "black", "gray", "dark_brown");
 	static List<String> llamatypes = Arrays.asList("creamy", "white", "brown", "gray");
 	static List<String> parrottypes = Arrays.asList("red", "blue", "green", "cyan", "gray");
-	static List<String> rabbittypes = Arrays.asList("brown", "white", "black", "black_and_white", "gold", "salt_and_pepper");
+	static List<String> rabbittypes = Arrays.asList("brown", "white", "black", "white_splotched", "gold", "salt_and_pepper");
 	static List<String> cattypes = Arrays.asList("tabby", "tuxedo", "red", "siamese", "british_shorthair", "calico", "persian", "ragdoll", "white", "jellie", "black");
 	static List<String> axolotltypes = Arrays.asList("lucy", "wild", "gold", "cyan", "blue");
 	
 	public static ItemStack getMobHead(String mobName, Integer amount) {
+		if (mobName.equals("piglin")) {
+			return new ItemStack(Items.PIGLIN_HEAD, amount);
+		}
+
 		Pair<String, String> textureData = HeadData.headTextureData.get(mobName);
 		if (textureData == null) {
 			return null;
@@ -98,11 +103,10 @@ public class MobHeads {
 				}
 			}
 			case Cat cat -> {
-				CatVariant catVariant = cat.getVariant().value();
-
-				Identifier texture = catVariant.assetInfo(false).texturePath();;
-				String type = texture.toString().split("cat/")[1].replace(".png", "");
-				mobname = type + "_cat";
+				Optional<ResourceKey<CatVariant>> catVariantKey = cat.getVariant().unwrapKey();
+				if (catVariantKey.isPresent()) {
+					mobname = catVariantKey.get().identifier().getPath() + "_cat";
+				}
 			}
 			case CopperGolem copperGolem -> {
 				WeatheringCopper.WeatherState weatherState = copperGolem.getWeatherState();
@@ -117,9 +121,13 @@ public class MobHeads {
 				mobname = weatherStateString + "copper_golem";
 			}
 			case Wolf wolf -> {
-				Identifier texture = wolf.getTexture();
-				String type = texture.toString().split("wolf/")[1].replace(".png", "").replace("wolf_", "");
-				mobname = type + "_wolf";
+				Holder<WolfVariant> wolfVariant = wolf.get(DataComponents.WOLF_VARIANT);
+				if (wolfVariant != null) {
+					Optional<ResourceKey<WolfVariant>> wolfVariantKey = wolfVariant.unwrapKey();
+					if (wolfVariantKey.isPresent()) {
+						mobname = wolfVariantKey.get().identifier().getPath() + "_wolf";
+					}
+				}
 			}
 			case Horse horse -> {
 				int type = horse.getVariant().getId(); // horse.getHorseVariant();
@@ -134,12 +142,6 @@ public class MobHeads {
 					type -= 256;
 				}
 				mobname = horsetypes.get(type) + "_horse";
-			}
-			case TraderLlama traderllama -> {
-				int type = traderllama.getVariant().getId();
-				if (type < llamatypes.size()) {
-					mobname = llamatypes.get(type) + "_trader_" + mobname;
-				}
 			}
 			case Llama llama -> {
 				int type = llama.getVariant().getId();
@@ -240,19 +242,15 @@ public class MobHeads {
 				}
 			}
 			case Villager villager -> {
-
-				VillagerData d = villager.getVillagerData();
-				VillagerProfession prof = d.profession().value();
-				if (!prof.toString().equals("none")) {
-					mobname = prof.toString();
+				String profession = getProfessionName(villager.getVillagerData());
+				if (!profession.equals("none")) {
+					mobname = profession;
 				}
 			}
 			case ZombieVillager zombievillager -> {
-
-				VillagerData d = zombievillager.getVillagerData();
-				VillagerProfession prof = d.profession().value();
-				if (!prof.toString().equals("none")) {
-					mobname = "zombie_" + prof;
+				String profession = getProfessionName(zombievillager.getVillagerData());
+				if (!profession.equals("none")) {
+					mobname = "zombie_" + profession;
 				}
 			}
 			default -> {
@@ -261,7 +259,16 @@ public class MobHeads {
 
 		return mobname.toLowerCase();
 	}
-	
+
+	private static String getProfessionName(VillagerData villagerData) {
+		Optional<ResourceKey<VillagerProfession>> professionKey = villagerData.profession().unwrapKey();
+		if (professionKey.isEmpty()) {
+			return "none";
+		}
+
+		return professionKey.get().identifier().getPath();
+	}
+
 	public static String capitalizeFirst(String string) {
 		StringBuilder sb = new StringBuilder(string);
 		for(int i=0; i < sb.length(); i++) {
