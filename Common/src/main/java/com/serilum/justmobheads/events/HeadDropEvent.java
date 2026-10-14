@@ -1,13 +1,13 @@
 package com.serilum.justmobheads.events;
 
 import com.mojang.authlib.GameProfile;
+import com.natamus.collective.functions.MessageFunctions;
 import com.serilum.justmobheads.config.ConfigHandler;
 import com.serilum.justmobheads.util.HeadData;
 import com.serilum.justmobheads.util.MobHeads;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -83,28 +83,21 @@ public class HeadDropEvent {
 			}
 		}
 		
-		double num = Math.random();
+		double chance = ConfigHandler.overallDropChance;
 		if (ConfigHandler.mobSpecificDropChances) {
-			double chance = -1;
-			if (headname.equals("")) {
-				if (HeadData.headChances.containsKey(mobname)) {
-					chance = HeadData.headChances.get(mobname);
-				}
+			if (HeadData.headChances.containsKey(mobname)) {
+				chance = HeadData.headChances.get(mobname);
 			}
-			else {
+			else if (!headname.equals("")) {
 				chance = ConfigHandler.creeperSkeletonZombieDropChance;
 			}
-
-			if (chance == -1) {
-				if (num > ConfigHandler.overallDropChance + extrachance) {
-					return;
-				}
-			}
-			else if (num > chance + extrachance) {
-				return;
-			}
 		}
-		else if (num > ConfigHandler.overallDropChance + extrachance) {
+
+		if (chance <= 0) {
+			return;
+		}
+
+		if (Math.random() > chance + extrachance) {
 			return;
 		}
 		
@@ -170,6 +163,6 @@ public class HeadDropEvent {
 			return;
 		}
 
-		itemStack.set(DataComponents.CUSTOM_NAME, Component.translatable("collective.justmobheads.gui.head", headName));
+		itemStack.set(DataComponents.CUSTOM_NAME, MessageFunctions.getTranslatableComponent("collective.justmobheads.gui.head", MobHeads.capitalizeFirst(headName.replace("_", " "))));
 	}
 }

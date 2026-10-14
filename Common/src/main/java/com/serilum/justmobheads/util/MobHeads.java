@@ -7,6 +7,7 @@ import com.natamus.collective.functions.MessageFunctions;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.animal.*;
@@ -14,7 +15,6 @@ import net.minecraft.world.entity.animal.axolotl.Axolotl;
 import net.minecraft.world.entity.animal.frog.Frog;
 import net.minecraft.world.entity.animal.horse.Horse;
 import net.minecraft.world.entity.animal.horse.Llama;
-import net.minecraft.world.entity.animal.horse.TraderLlama;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.ZombieVillager;
 import net.minecraft.world.entity.npc.Villager;
@@ -26,6 +26,7 @@ import net.minecraft.world.item.Items;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class MobHeads {
 	static List<String> horsetypes = Arrays.asList("white", "creamy", "chestnut", "brown", "black", "gray", "dark_brown");
@@ -36,6 +37,10 @@ public class MobHeads {
 	static List<String> axolotltypes = Arrays.asList("lucy", "wild", "gold", "cyan", "blue");
 	
 	public static ItemStack getMobHead(String mobName, Integer amount) {
+		if (mobName.equals("piglin")) {
+			return new ItemStack(Items.PIGLIN_HEAD, amount);
+		}
+
 		Pair<String, String> textureData = HeadData.headTextureData.get(mobName);
 		if (textureData == null) {
 			return null;
@@ -85,11 +90,10 @@ public class MobHeads {
 				mobname = type + "_cat";
 			}
 			case Wolf wolf -> {
-				WolfVariant wolfVariant = wolf.getVariant().value();
-				
-				ResourceLocation texture = wolfVariant.wildTexture();
-				String type = texture.toString().split("wolf/")[1].replace(".png", "").replace("wolf_", "");
-				mobname = type + "_wolf";
+				Optional<ResourceKey<WolfVariant>> wolfVariantKey = wolf.getVariant().unwrapKey();
+				if (wolfVariantKey.isPresent()) {
+					mobname = wolfVariantKey.get().location().getPath() + "_wolf";
+				}
 			}
 			case Horse horse -> {
 				int type = horse.getVariant().getId(); // horse.getHorseVariant();
@@ -104,12 +108,6 @@ public class MobHeads {
 					type -= 256;
 				}
 				mobname = horsetypes.get(type) + "_horse";
-			}
-			case TraderLlama traderllama -> {
-				int type = traderllama.getVariant().getId();
-				if (type < llamatypes.size()) {
-					mobname = llamatypes.get(type) + "_trader_" + mobname;
-				}
 			}
 			case Llama llama -> {
 				int type = llama.getVariant().getId();
@@ -201,7 +199,7 @@ public class MobHeads {
 
 		return mobname.toLowerCase();
 	}
-	
+
 	public static String capitalizeFirst(String string) {
 		StringBuilder sb = new StringBuilder(string);
 		for(int i=0; i < sb.length(); i++) {
