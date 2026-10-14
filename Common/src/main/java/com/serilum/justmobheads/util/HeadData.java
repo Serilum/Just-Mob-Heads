@@ -1,6 +1,7 @@
 package com.serilum.justmobheads.util;
 
 import com.mojang.datafixers.util.Pair;
+import com.serilum.justmobheads.config.ConfigHandler;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -100,7 +101,7 @@ public class HeadData {
 		defaultHeadChances.put("stray", 0.1); headTextureData.put("stray", new Pair<>("644c9bad-958b-43ce-9d2f-199d85be607c", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzhkZGY3NmU1NTVkZDVjNGFhOGEwYTVmYzU4NDUyMGNkNjNkNDg5YzI1M2RlOTY5ZjdmMjJmODVhOWEyZDU2In19fQ==")); headNoteBlockSounds.put("stray", "minecraft:entity.stray.ambient");
 		defaultHeadChances.put("vex", 0.25); headTextureData.put("vex", new Pair<>("f83bcfc1-0213-4957-888e-d3e2fae71203", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWU3MzMwYzdkNWNkOGEwYTU1YWI5ZTk1MzIxNTM1YWM3YWUzMGZlODM3YzM3ZWE5ZTUzYmVhN2JhMmRlODZiIn19fQ==")); headNoteBlockSounds.put("vex", "minecraft:entity.vex.ambient");
 		defaultHeadChances.put("illusioner", 0.25); headTextureData.put("illusioner", new Pair<>("5f5bdb50-408b-40b1-958a-63b753edcafc", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDYzOWQzMjVmNDQ5NDI1OGE0NzNhOTNhM2I0N2YzNGEwYzUxYjNmY2VhZjU5ZmVlODcyMDVhNWU3ZmYzMWY2OCJ9fX0=")); headNoteBlockSounds.put("illusioner", "minecraft:entity.illusioner.cast_spell");
-		defaultHeadChances.put("vindicator", 0.25); headTextureData.put("vindicator", new Pair<>("36ee7e5b-c092-48ad-9673-2a73b0a44b4f", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTAwZDNmZmYxNmMyZGNhNTliOWM1OGYwOTY1MjVjODY5NzExNjZkYmFlMTMzYjFiMDUwZTVlZTcxNjQ0MyJ9fX0=")); headNoteBlockSounds.put("vindicator", "minecraft:entity.vindicator.ambient");
+		defaultHeadChances.put("vindicator", 0.25); headTextureData.put("vindicator", new Pair<>("9a53dbc5-07a4-4195-89d4-9b416af3054d", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGFlZWQ5ZDhlZDE3NjllNzdlM2NmZTExZGMxNzk2NjhlZDBkYjFkZTZjZTI5ZjFjOGUwZDVmZTVlNjU3M2I2MCJ9fX0=")); headNoteBlockSounds.put("vindicator", "minecraft:entity.vindicator.ambient");
 		defaultHeadChances.put("witch", 0.05); headTextureData.put("witch", new Pair<>("755dc254-690e-40cc-bdec-e290f4941efb", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODllOGI1ZjE1YTliMjlhMWUzODljOTUyMThmZDM3OTVmMzI4NzJlNWFlZTk0NjRhNzY0OTVjNTI3ZDIyNDUifX19")); headNoteBlockSounds.put("witch", "minecraft:entity.witch.ambient");
 		defaultHeadChances.put("wither", 1.0); headTextureData.put("wither", new Pair<>("119c371b-ea16-47c9-ad7f-23b3d894520a", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2RmNzRlMzIzZWQ0MTQzNjk2NWY1YzU3ZGRmMjgxNWQ1MzMyZmU5OTllNjhmYmI5ZDZjZjVjOGJkNDEzOWYifX19")); headNoteBlockSounds.put("wither", "minecraft:entity.wither.ambient");
 
@@ -113,7 +114,7 @@ public class HeadData {
 		// Fish
 		defaultHeadChances.put("cod", 0.1); headTextureData.put("cod", new Pair<>("d6d4c744-06b4-4a8a-bc7a-bdb0770bb1cf", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzg5MmQ3ZGQ2YWFkZjM1Zjg2ZGEyN2ZiNjNkYTRlZGRhMjExZGY5NmQyODI5ZjY5MTQ2MmE0ZmIxY2FiMCJ9fX0=")); headNoteBlockSounds.put("cod", "minecraft:entity.cod.flop");
 		defaultHeadChances.put("salmon", 0.1); headTextureData.put("salmon", new Pair<>("0354c430-3979-4b6e-8e65-a99eb3ea8818", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGFlYjIxYTI1ZTQ2ODA2Y2U4NTM3ZmJkNjY2ODI4MWNmMTc2Y2VhZmU5NWFmOTBlOTRhNWZkODQ5MjQ4NzgifX19")); headNoteBlockSounds.put("salmon", "minecraft:entity.salmon.flop");
-		defaultHeadChances.put("pufferfish", 0.1); headTextureData.put("pufferfish", new Pair<>("258e3114-368c-48a1-85fd-be580912f0df", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTcxNTI4NzZiYzNhOTZkZDJhMjI5OTI0NWVkYjNiZWVmNjQ3YzhhNTZhYzg4NTNhNjg3YzNlN2I1ZDhiYiJ9fX0=")); headNoteBlockSounds.put("pufferfish", "minecraft:entity.pufferfish.blow_up");
+		defaultHeadChances.put("pufferfish", 0.1); headTextureData.put("pufferfish", new Pair<>("258e3114-368c-48a1-85fd-be580912f0df", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTcxNTI4NzZiYzNhOTZkZDJhMjI5OTI0NWVkYjNiZWVmNjQ3YzhhNTZhYzg4NTNhNjg3YzNlN2I1ZDhiYiJ9fX0=")); headNoteBlockSounds.put("pufferfish", "minecraft:entity.puffer_fish.blow_up");
 		defaultHeadChances.put("tropical_fish", 0.1); headTextureData.put("tropical_fish", new Pair<>("58b108f2-efc5-4872-93ed-d392a33f5215", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzRhMGM4NGRjM2MwOTBkZjdiYWZjNDM2N2E5ZmM2Yzg1MjBkYTJmNzNlZmZmYjgwZTkzNGQxMTg5ZWFkYWM0MSJ9fX0=")); headNoteBlockSounds.put("tropical_fish", "minecraft:entity.tropical_fish.flop");
 		//
 		defaultHeadChances.put("phantom", 0.1); headTextureData.put("phantom", new Pair<>("9290add8-c291-4a5a-8f8a-594f165406a3", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2U5NTE1M2VjMjMyODRiMjgzZjAwZDE5ZDI5NzU2ZjI0NDMxM2EwNjFiNzBhYzAzYjk3ZDIzNmVlNTdiZDk4MiJ9fX0=")); headNoteBlockSounds.put("phantom", "minecraft:entity.phantom.ambient");
@@ -150,7 +151,7 @@ public class HeadData {
 		defaultHeadChances.put("all_black_cat", 0.5); headTextureData.put("all_black_cat", new Pair<>("f89934e4-99a0-4dab-9151-7b63831e5fd1", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjJjMWU4MWZmMDNlODJhM2U3MWUwY2Q1ZmJlYzYwN2UxMTM2MTA4OWFhNDdmMjkwZDQ2YzhhMmMwNzQ2MGQ5MiJ9fX0=")); headNoteBlockSounds.put("all_black_cat", "minecraft:entity.cat.ambient");
 
 		// Villagers
-		defaultHeadChances.put("villager", 0.1); headTextureData.put("villager", new Pair<>("0a9e8efb-9191-4c81-80f5-e27ca5433156", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODIyZDhlNzUxYzhmMmZkNGM4OTQyYzQ0YmRiMmY1Y2E0ZDhhZThlNTc1ZWQzZWIzNGMxOGE4NmU5M2IifX19")); headNoteBlockSounds.put("villager", "minecraft:entity.villager.ambien");
+		defaultHeadChances.put("villager", 0.1); headTextureData.put("villager", new Pair<>("0a9e8efb-9191-4c81-80f5-e27ca5433156", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODIyZDhlNzUxYzhmMmZkNGM4OTQyYzQ0YmRiMmY1Y2E0ZDhhZThlNTc1ZWQzZWIzNGMxOGE4NmU5M2IifX19")); headNoteBlockSounds.put("villager", "minecraft:entity.villager.ambient");
 		defaultHeadChances.put("armorer", 0.1); headTextureData.put("armorer", new Pair<>("28af2ba5-de7d-452b-8028-8e9bdb4b231a", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzNhOGZkZWVjMDM4NjlmZTQwMDIwNzgwM2M5NzVmNjdjOTU4OTBlMzU2N2NmZDdlN2NkYThlYTViMmI2ODc3MyJ9fX0=")); headNoteBlockSounds.put("armorer", "minecraft:entity.villager.work_armorer");
 		defaultHeadChances.put("butcher", 0.1); headTextureData.put("butcher", new Pair<>("56c54193-b934-49f5-8ad1-d8968d09df6e", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmY0MWFjNjRhZmVhZmY5OTk5NGE4ZWRhYThiM2E0MGE2NjIzZDQxODAxZjE4ZGM5YmU4NmMxZTNlZmFjOWJhNyJ9fX0=")); headNoteBlockSounds.put("butcher", "minecraft:entity.villager.work_butcher");
 		defaultHeadChances.put("cartographer", 0.1); headTextureData.put("cartographer", new Pair<>("37e68cc0-19ea-4802-9fd0-18088efca895", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGM3YTI3MzU2ZTE5ODc1NDBhZWVjM2Y0YTFhYjM5NmRhZDAyNTg3YTU4YTFjOTE2NmEyMDkyMjI5ODA0MWUxMSJ9fX0=")); headNoteBlockSounds.put("cartographer", "minecraft:entity.villager.work_cartographer");
@@ -272,6 +273,10 @@ public class HeadData {
 
 		// 26.2
 		defaultHeadChances.put("sulfur_cube", 0.05); headTextureData.put("sulfur_cube", new Pair<>("b2b07fd5-2576-4ad8-ba31-6851cabf39d7", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjA1ZWMwMjQxZjA4NGUxNzc2YTIwMWY2ZGY4YzEyNGM4NjM3NjcxZmQ4NWUwYWY1ZTc3MDkwZjRlOWMzODYwMiJ9fX0=")); headNoteBlockSounds.put("sulfur_cube", "minecraft:entity.small_sulfur_cube.squish");
+
+		defaultHeadChances.put("creeper", ConfigHandler.creeperSkeletonZombieDropChance);
+		defaultHeadChances.put("skeleton", ConfigHandler.creeperSkeletonZombieDropChance);
+		defaultHeadChances.put("zombie", ConfigHandler.creeperSkeletonZombieDropChance);
 
 		try {
 			Util.generateChanceConfig(defaultHeadChances);
