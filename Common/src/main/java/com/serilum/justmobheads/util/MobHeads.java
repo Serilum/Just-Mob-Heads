@@ -34,6 +34,10 @@ public class MobHeads {
 	static List<String> axolotltypes = Arrays.asList("lucy", "wild", "gold", "cyan", "blue");
 
 	public static ItemStack getMobHead(String mobName, Integer amount) {
+		if (mobName.equals("piglin")) {
+			return new ItemStack(Items.PIGLIN_HEAD, amount);
+		}
+
 		Pair<String, String> textureData = HeadData.headTextureData.get(mobName);
 		if (textureData == null) {
 			return null;

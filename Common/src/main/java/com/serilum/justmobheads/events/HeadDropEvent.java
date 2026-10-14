@@ -1,6 +1,7 @@
 package com.serilum.justmobheads.events;
 
 import com.mojang.authlib.GameProfile;
+import com.natamus.collective.functions.MessageFunctions;
 import com.natamus.collective.functions.StringFunctions;
 import com.serilum.justmobheads.config.ConfigHandler;
 import com.serilum.justmobheads.util.HeadData;
@@ -8,7 +9,6 @@ import com.serilum.justmobheads.util.MobHeads;
 import joptsimple.internal.Strings;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -89,28 +89,21 @@ public class HeadDropEvent {
 			}
 		}
 		
-		double num = Math.random();
+		double chance = ConfigHandler.overallDropChance;
 		if (ConfigHandler.mobSpecificDropChances) {
-			double chance = -1;
-			if (headname.equals("")) {
-				if (HeadData.headChances.containsKey(mobname)) {
-					chance = HeadData.headChances.get(mobname);
-				}
+			if (HeadData.headChances.containsKey(mobname)) {
+				chance = HeadData.headChances.get(mobname);
 			}
-			else {
+			else if (!headname.equals("")) {
 				chance = ConfigHandler.creeperSkeletonZombieDropChance;
 			}
-
-			if (chance == -1) {
-				if (num > ConfigHandler.overallDropChance + extrachance) {
-					return;
-				}
-			}
-			else if (num > chance + extrachance) {
-				return;
-			}
 		}
-		else if (num > ConfigHandler.overallDropChance + extrachance) {
+
+		if (chance <= 0) {
+			return;
+		}
+
+		if (Math.random() > chance + extrachance) {
 			return;
 		}
 		
@@ -171,7 +164,7 @@ public class HeadDropEvent {
 			}
 		}
 
-		itemStack.setHoverName(Component.translatable("collective.justmobheads.gui.head", StringFunctions.capitalizeEveryWord(headName.replace("_", " "))));
+		itemStack.setHoverName(MessageFunctions.getTranslatableComponent("collective.justmobheads.gui.head", StringFunctions.capitalizeEveryWord(headName.replace("_", " "))));
 	}
 
 	// Legacy code for previously generated mob heads. Might be removed in the future.
