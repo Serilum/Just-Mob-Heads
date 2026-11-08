@@ -86,4 +86,74 @@ public class Util {
 		
 		return false;
 	}
+
+	public static String getHeadChances() {
+		List<String> headChances = new ArrayList<>();
+		for (String line : getHeadChancesFileText().replaceAll("\n", "").split(",")) {
+			String[] lineParts = line.replace("\"", "").replaceAll(" ", "").trim().split(":");
+			if (lineParts.length < 2 || !isChance(lineParts[1]) || !HeadData.defaultHeadChances.containsKey(lineParts[0])) {
+				continue;
+			}
+
+			headChances.add("minecraft:" + lineParts[0] + "=" + lineParts[1]);
+		}
+		return String.join(",", headChances);
+	}
+
+	public static String getDefaultHeadChances() {
+		List<String> headChances = new ArrayList<>();
+		for (String headName : HeadData.defaultHeadChances.keySet()) {
+			headChances.add("minecraft:" + headName + "=" + HeadData.defaultHeadChances.get(headName));
+		}
+		return String.join(",", headChances);
+	}
+
+	public static void setHeadChances(String headChancesText) {
+		List<String> lines = new ArrayList<>();
+		for (String entry : headChancesText.split(",")) {
+			String[] entryParts = entry.split("=");
+			if (entryParts.length != 2 || !isChance(entryParts[1].strip())) {
+				continue;
+			}
+
+			lines.add('"' + getHeadName(entryParts[0].strip()) + '"' + " : " + entryParts[1].strip() + ",");
+		}
+
+		try {
+			PrintWriter writer = new PrintWriter(file, StandardCharsets.UTF_8);
+			for (String line : lines) {
+				writer.println(line);
+			}
+			writer.close();
+
+			generateChanceConfig(HeadData.defaultHeadChances);
+		}
+		catch (IOException ignored) { }
+	}
+
+	private static String getHeadName(String headId) {
+		if (headId.startsWith("minecraft:")) {
+			return headId.substring("minecraft:".length());
+		}
+		return headId;
+	}
+
+	private static boolean isChance(String text) {
+		try {
+			Double.parseDouble(text);
+			return true;
+		}
+		catch (NumberFormatException ignored) {
+			return false;
+		}
+	}
+
+	private static String getHeadChancesFileText() {
+		try {
+			return new String(Files.readAllBytes(file.toPath()));
+		}
+		catch (IOException ignored) {
+			return "";
+		}
+	}
 }
