@@ -2,6 +2,7 @@ package com.serilum.justmobheads.util;
 
 import com.mojang.datafixers.util.Pair;
 import com.serilum.justmobheads.config.ConfigHandler;
+import com.serilum.justmobheads.data.Constants;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -98,7 +99,7 @@ public class HeadData {
 		defaultHeadChances.put("shulker", 0.05); headTextureData.put("shulker", new Pair<String, String>("cda568d7-46da-4468-a46a-4c1ed73faf53", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWU3MzgzMmUyNzJmODg0NGM0NzY4NDZiYzQyNGEzNDMyZmI2OThjNThlNmVmMmE5ODcxYzdkMjlhZWVhNyJ9fX0=")); headNoteBlockSounds.put("shulker", "minecraft:entity.shulker.ambient");
 		defaultHeadChances.put("silverfish", 0.05); headTextureData.put("silverfish", new Pair<String, String>("30a4cd5c-5754-4db8-8960-18022a74627d", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGE5MWRhYjgzOTFhZjVmZGE1NGFjZDJjMGIxOGZiZDgxOWI4NjVlMWE4ZjFkNjIzODEzZmE3NjFlOTI0NTQwIn19fQ==")); headNoteBlockSounds.put("silverfish", "minecraft:entity.silverfish.ambient");
 		defaultHeadChances.put("slime", 0.05); headTextureData.put("slime", new Pair<String, String>("9aca565d-105c-4e8c-81fc-740545cb74b2", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWRjYjcyYmVjZTZkMzkwMjYyNWY3OWNkNzNhNzlmOTRlZGI2MTMyNmQ1MTBiODAwZTM4ZDJiNDNhZjkxNDhkZSJ9fX0")); headNoteBlockSounds.put("slime", "minecraft:entity.slime.squish_small");
-		defaultHeadChances.put("snowman", 0.05); headTextureData.put("snowman", new Pair<String, String>("673db4c6-b7ea-421e-ae35-d7ab65e8b35e", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWZkZmQxZjc1MzhjMDQwMjU4YmU3YTkxNDQ2ZGE4OWVkODQ1Y2M1ZWY3MjhlYjVlNjkwNTQzMzc4ZmNmNCJ9fX0=")); headNoteBlockSounds.put("snowman", "minecraft:entity.snow_golem.hurt");
+		headTextureData.put("snowman", new Pair<String, String>("673db4c6-b7ea-421e-ae35-d7ab65e8b35e", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWZkZmQxZjc1MzhjMDQwMjU4YmU3YTkxNDQ2ZGE4OWVkODQ1Y2M1ZWY3MjhlYjVlNjkwNTQzMzc4ZmNmNCJ9fX0=")); headNoteBlockSounds.put("snowman", "minecraft:entity.snow_golem.hurt");
 		defaultHeadChances.put("spider", 0.05); headTextureData.put("spider", new Pair<String, String>("8bdb71d0-4724-48b2-9344-e79480424798", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2Q1NDE1NDFkYWFmZjUwODk2Y2QyNThiZGJkZDRjZjgwYzNiYTgxNjczNTcyNjA3OGJmZTM5MzkyN2U1N2YxIn19fQ==")); headNoteBlockSounds.put("spider", "minecraft:entity.spider.ambient");
 		defaultHeadChances.put("squid", 0.05); headTextureData.put("squid", new Pair<String, String>("f95d9504-ea2b-4b89-b2d0-d400654a7010", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMDE0MzNiZTI0MjM2NmFmMTI2ZGE0MzRiODczNWRmMWViNWIzY2IyY2VkZTM5MTQ1OTc0ZTljNDgzNjA3YmFjIn19fQ==")); headNoteBlockSounds.put("squid", "minecraft:entity.squid.ambient");
 		defaultHeadChances.put("stray", 0.1); headTextureData.put("stray", new Pair<String, String>("644c9bad-958b-43ce-9d2f-199d85be607c", "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzhkZGY3NmU1NTVkZDVjNGFhOGEwYTVmYzU4NDUyMGNkNjNkNDg5YzI1M2RlOTY5ZjdmMjJmODVhOWEyZDU2In19fQ==")); headNoteBlockSounds.put("stray", "minecraft:entity.stray.ambient");
@@ -231,8 +232,8 @@ public class HeadData {
 
 		try {
 			Util.generateChanceConfig(defaultHeadChances);
-		} catch (Exception ex) {
-			System.out.println("[Just Mob Heads] Something went wrong while generating a head chance config file.");
+		} catch (Exception ignored) {
+			Constants.logger.warn("[" + Reference.NAME + "] Something went wrong while generating a head chance config file.");
 		}
 	}
 }
